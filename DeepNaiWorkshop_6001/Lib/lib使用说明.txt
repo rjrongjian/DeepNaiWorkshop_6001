@@ -1,0 +1,8 @@
+﻿1.cskin由于是.net语言写得，可以直接添加到“引用”中
+2.vlclib由于是c++编写，所以只能通过Dllimport使用
+  当出现：试图加载格式不正确的程序。 (异常来自 HRESULT:0x8007000B) https://www.cnblogs.com/sundajade/articles/3735663.html
+  由于我电脑安装的vlc是64位版本的，需将cpu调成x64才行
+
+  (1)vlc讲解 https://blog.csdn.net/leixiaohua1020/article/details/42363079
+ （2）！！！！！！！为了兼容32位需要下载32位安装程序在爬取dll
+ （3）！！！！！！！由于vlc的插件化，导致plugins很大，可以适当删些功能的dll
