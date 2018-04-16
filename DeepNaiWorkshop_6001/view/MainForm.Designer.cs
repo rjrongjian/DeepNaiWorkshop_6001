@@ -35,19 +35,25 @@
             // mediaPanel
             // 
             this.mediaPanel.BackColor = System.Drawing.Color.Black;
-            this.mediaPanel.Location = new System.Drawing.Point(18, 49);
+            this.mediaPanel.Location = new System.Drawing.Point(7, 31);
             this.mediaPanel.Name = "mediaPanel";
-            this.mediaPanel.Size = new System.Drawing.Size(646, 394);
+            this.mediaPanel.Size = new System.Drawing.Size(657, 412);
             this.mediaPanel.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 473);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
+            this.ClientSize = new System.Drawing.Size(672, 473);
+            this.ControlBoxActive = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
+            this.ControlBoxDeactive = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
+            this.ControlBoxSpace = 5;
             this.Controls.Add(this.mediaPanel);
+            this.EffectBack = System.Drawing.Color.Transparent;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "";
             ((System.ComponentModel.ISupportInitialize)(this.mediaPanel)).EndInit();
             this.ResumeLayout(false);
 

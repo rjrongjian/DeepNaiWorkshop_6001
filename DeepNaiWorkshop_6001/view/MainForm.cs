@@ -13,7 +13,8 @@ using System.Windows.Forms;
 
 namespace DeepNaiWorkshop_6001.view
 {
-    public partial class MainForm : Skin_Mac
+    //public partial class MainForm : Skin_Mac
+    public partial class MainForm : CCSkinMain
     {
         public MainForm()
         {
