@@ -31,7 +31,7 @@ namespace DeepNaiWorkshop_6001.view
             IntPtr mediaPlayer = MediaPlayer.Create_MediaPlayer(instance, this.mediaPanel.Handle);
 
 
-            bool result = MediaPlayer.NetWork_Media_Play(instance, mediaPlayer, @"http://58.51.149.97/alhdl.cdn.zhanqi.tv/zqlive/264155_E5o7z.flv?k=eca0c978541fe473194ab540470e96a0&t=5ad079b5&platform=01&playNum=3985385074&gId=1686140948&ipFrom=1&clientIp=27.19.150.106&fhost=index");
+            bool result = MediaPlayer.NetWork_Media_Play(instance, mediaPlayer, @"http://116.211.183.192/alhdl.cdn.zhanqi.tv/zqlive/32071_U12YU.flv?k=5a09326a1efd06742cb6f27e7633ef31&t=5ad4aecd&platform=01&playNum=3779303996&gId=1634103373&ipFrom=1&clientIp=171.43.146.191&fhost=");
             Console.WriteLine("播放网络源结果："+result);
             
 
@@ -45,6 +45,83 @@ namespace DeepNaiWorkshop_6001.view
             vlc.PlayFile("http://58.51.149.97/alhdl.cdn.zhanqi.tv/zqlive/264155_E5o7z.flv?k=eca0c978541fe473194ab540470e96a0&t=5ad079b5&platform=01&playNum=3985385074&gId=1686140948&ipFrom=1&clientIp=27.19.150.106&fhost=index");
             //vlc.Pause();
             */
+        }
+        
+        private void accountButton_Click(object sender, EventArgs e)
+        {
+            if (accountPanel.Visible)
+            {
+                animator.Hide(accountPanel);
+            }
+            else
+            {
+                animator.Show(accountPanel);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
+
+        }
+        /// <summary>
+        /// 显示账户panel
+        /// </summary>
+        public void showAccountPanel()
+        {
+            if (!accountPanel.Visible)
+            {
+                animator.Show(accountPanel);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
+        }
+        /// <summary>
+        /// 隐藏账户panel
+        /// </summary>
+        public void hideAccountPanel()
+        {
+            if (accountPanel.Visible)
+            {
+                animator.Hide(accountPanel);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
+        }
+
+        private void movieButton_Click(object sender, EventArgs e)
+        {
+            if (moviePanel.Visible)
+            {
+                animator.Hide(moviePanel);
+            }
+            else
+            {
+                animator.Show(moviePanel);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
+        }
+        /// <summary>
+        /// 显示电影盒子panel
+        /// </summary>
+        public void showMoviePanel()
+        {
+            if (!moviePanel.Visible)
+            {
+                animator.Show(moviePanel);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
+        }
+        /// <summary>
+        /// 隐藏电影盒子panel
+        /// </summary>
+        public void hideMoviePanel()
+        {
+            if (moviePanel.Visible)
+            {
+                animator.Hide(moviePanel);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
         }
     }
 }
