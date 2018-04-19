@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Controller\MainFormController.cs" />
     <Compile Include="MyTool\MyMemoryUtil.cs" />
+    <Compile Include="MyTool\MyVal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\MediaPlayer.cs" />
