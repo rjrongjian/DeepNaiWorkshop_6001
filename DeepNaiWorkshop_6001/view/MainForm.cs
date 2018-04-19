@@ -1,5 +1,6 @@
 ﻿using CCWin;
 using DeepNaiWorkshop_6001.service;
+using DeepNaiWorkshop_6001.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,13 +50,15 @@ namespace DeepNaiWorkshop_6001.view
         
         private void accountButton_Click(object sender, EventArgs e)
         {
-            if (accountPanel.Visible)
+            //Console.WriteLine("");
+
+            if (memberControl.Visible)
             {
-                animator.Hide(accountPanel);
+                animator.Hide(memberControl);
             }
             else
             {
-                animator.Show(accountPanel);
+                animator.Show(memberControl);
             }
             //等到所有的动画将完成
             animator.WaitAllAnimations();
@@ -66,9 +69,10 @@ namespace DeepNaiWorkshop_6001.view
         /// </summary>
         public void showAccountPanel()
         {
-            if (!accountPanel.Visible)
+
+            if (!memberControl.Visible)
             {
-                animator.Show(accountPanel);
+                animator.Show(memberControl);
             }
             //等到所有的动画将完成
             animator.WaitAllAnimations();
@@ -78,9 +82,9 @@ namespace DeepNaiWorkshop_6001.view
         /// </summary>
         public void hideAccountPanel()
         {
-            if (accountPanel.Visible)
+            if (memberControl.Visible)
             {
-                animator.Hide(accountPanel);
+                animator.Hide(memberControl);
             }
             //等到所有的动画将完成
             animator.WaitAllAnimations();

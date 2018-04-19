@@ -1,5 +1,6 @@
 ﻿using DeepNaiWorkshop_6001.controller;
 using DeepNaiWorkshop_6001.view;
+using DeepNaiWorkshop_6001.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
