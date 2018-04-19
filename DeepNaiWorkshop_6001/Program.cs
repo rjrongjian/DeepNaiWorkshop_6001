@@ -22,9 +22,9 @@ namespace DeepNaiWorkshop_6001
             Application.SetCompatibleTextRenderingDefault(false);
             Directory.SetCurrentDirectory(Application.StartupPath);
 
-            mainFormController = new MainFormController();
-            mainFormController.Start();
-            Application.Run();
+            //mainFormController = new MainFormController();
+            //mainFormController.Start();
+            Application.Run(new MainForm());
         }
     }
 }

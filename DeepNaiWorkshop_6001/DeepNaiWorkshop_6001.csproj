@@ -490,17 +490,27 @@
     <Content Include="Lib\vlclib\plugins\visualization\libprojectm_plugin.dll" />
     <Content Include="Lib\vlclib\plugins\visualization\libvisual_plugin.dll" />
     <Content Include="Resource\button\pause_down.png" />
+    <Content Include="Resource\button\pause_down_50x50.png" />
     <Content Include="Resource\button\pause_hover.png" />
+    <Content Include="Resource\button\pause_hover_50x50.png" />
     <Content Include="Resource\button\pause_normal.png" />
+    <Content Include="Resource\button\pause_normal_50x50.png" />
     <Content Include="Resource\button\play_down.png" />
+    <Content Include="Resource\button\play_down_50x50.png" />
     <Content Include="Resource\button\play_hover.png" />
+    <Content Include="Resource\button\play_hover_50x50.png" />
     <Content Include="Resource\button\play_normal.png" />
+    <Content Include="Resource\button\play_normal_50x50.png" />
+    <Content Include="Resource\icon\nolog.jpg" />
     <Content Include="Resource\logo\award.png" />
     <Content Include="Resource\logo\clapperboard.png" />
     <Content Include="Resource\logo\logo.ico" />
+    <Content Include="Resource\logo\logo100x100.png" />
     <Content Include="Resource\logo\logo2.ico" />
+    <Content Include="Resource\logo\technology - 副本.png" />
     <Content Include="Resource\logo\technology.png" />
     <Content Include="Resource\logo\technology128x128.png" />
+    <Content Include="文件结构说明.txt" />
     <Content Include="重要说明.txt" />
   </ItemGroup>
   <ItemGroup>
