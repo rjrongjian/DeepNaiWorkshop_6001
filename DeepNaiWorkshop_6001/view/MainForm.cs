@@ -127,5 +127,10 @@ namespace DeepNaiWorkshop_6001.view
             //等到所有的动画将完成
             animator.WaitAllAnimations();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

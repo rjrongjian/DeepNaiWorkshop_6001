@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            CCWin.SkinControl.Animation animation5 = new CCWin.SkinControl.Animation();
+            CCWin.SkinControl.Animation animation1 = new CCWin.SkinControl.Animation();
             this.mediaPanel = new CCWin.SkinControl.SkinPushPanel();
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.skinPanel1.SuspendLayout();
             this.moviePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPushPanel1)).BeginInit();
+            this.Visible = false;
             this.skinPushPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,22 +150,22 @@
             // 
             this.animator.AnimationType = CCWin.SkinControl.AnimationType.Transparent;
             this.animator.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 1F;
-            this.animator.DefaultAnimation = animation5;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.animator.DefaultAnimation = animation1;
             // 
             // moviePanel
             // 
@@ -222,6 +223,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
             this.BackToColor = false;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ControlBoxActive = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(77)))));
+            this.ControlBoxDeactive = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
             this.ControlBoxOffset = new System.Drawing.Point(6, 8);
             this.ControlBoxSpace = 5;
             this.Controls.Add(this.memberControl);
@@ -234,10 +237,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ICoOffset = new System.Drawing.Point(8, 3);
             this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "";
             this.TitleColor = System.Drawing.Color.IndianRed;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mediaPanel)).EndInit();
             this.skinPanel1.ResumeLayout(false);
             this.skinPanel1.PerformLayout();
