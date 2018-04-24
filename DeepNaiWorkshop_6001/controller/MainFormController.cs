@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DeepNaiWorkshop_6001.controller
 {
-    class MainFormController
+    public class MainFormController
     {
         private MainForm mainForm { get; set; }
         private InitForm initForm;
@@ -20,6 +20,7 @@ namespace DeepNaiWorkshop_6001.controller
         private MovieService movieService;
         private NotifyService notifyService;
         private PlayerService playerService;
+        private SystemService systemService;
 
         public MainFormController()
         {
@@ -45,6 +46,12 @@ namespace DeepNaiWorkshop_6001.controller
             
             initForm.InitAnimator();
 
+            //加载系统信息
+            //TODO
+            systemService = new SystemService();
+            systemService.Reload();
+
+
             //加载会员信息
             memberService = new MemberService();
             memberService.ReLoad();//会员数据
@@ -67,7 +74,7 @@ namespace DeepNaiWorkshop_6001.controller
             initForm.Visible = false;
             if (!initForm.IsDisposed && !initForm.Disposing)
             {
-                MyAppConfig.isNormalCloseInitForm = true;//正常关闭app
+                SystemConfig.isNormalCloseInitForm = true;//正常关闭app
                 initForm.Close();
 
             }
@@ -76,10 +83,17 @@ namespace DeepNaiWorkshop_6001.controller
 
             //主窗口展示
             mainForm = new MainForm();
+            mainForm.SetMainFormController(this);
             mainForm.Visible = true;
             Application.Run(mainForm);//开始 win32 的窗口消息循环机制。这样能保持主窗体不关闭程序就一直处于消息循环的不关闭状态
 
-            
+            //判断校验会员是否可用
+            if (!memberService.CanUseMember(systemService.getCurrentSystemConfigJson()))
+            {
+                //TODO
+                mainForm.ShowModalWindow(memberService.GetCurrentLoadMember());
+            }
+
 
 
 

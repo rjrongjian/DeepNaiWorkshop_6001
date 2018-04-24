@@ -1,4 +1,5 @@
 ﻿using CCWin;
+using DeepNaiWorkshop_6001.controller;
 using DeepNaiWorkshop_6001.Model;
 using DeepNaiWorkshop_6001.MyTool;
 using DeepNaiWorkshop_6001.service;
@@ -20,6 +21,7 @@ namespace DeepNaiWorkshop_6001.view
     //public partial class MainForm : Skin_Mac
     public partial class MainForm : CCSkinMain
     {
+        private MainFormController mainFormController;
         public MainForm()
         {
             
@@ -68,6 +70,17 @@ namespace DeepNaiWorkshop_6001.view
             animator.WaitAllAnimations();
 
         }
+
+        public void SetMainFormController(MainFormController mainFormController)
+        {
+            this.mainFormController = mainFormController;
+        }
+
+        internal void ShowModalWindow(Member member)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 显示账户panel
         /// </summary>
@@ -145,7 +158,7 @@ namespace DeepNaiWorkshop_6001.view
 
         private void MainForm_Shown(object sender, EventArgs e)//当窗体首次被展示之前，关闭初始化窗口，退出应用
         {
-            MyAppConfig.isFirstShownForMainForm = true;
+            SystemConfig.isFirstShownForMainForm = true;
         }
 
         

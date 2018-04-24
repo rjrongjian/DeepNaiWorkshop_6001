@@ -57,11 +57,11 @@ namespace DeepNaiWorkshop_6001.View
             //{
             //    MySystemUtil.Exit("初始化阶段，关闭应用");
             //}
-            if (MyAppConfig.isNormalCloseInitForm)
+            if (SystemConfig.isNormalCloseInitForm)
             {
                 return;
             }
-            if (!MyAppConfig.isFirstShownForMainForm)
+            if (!SystemConfig.isFirstShownForMainForm)
             {
                 MySystemUtil.Exit("初始化阶段，关闭应用");
             }
@@ -76,7 +76,7 @@ namespace DeepNaiWorkshop_6001.View
 
         private void InitForm_Shown(object sender, EventArgs e)
         {
-            MyAppConfig.isFirstShownForInitForm = true;
+            SystemConfig.isFirstShownForInitForm = true;
         }
     }
 }
