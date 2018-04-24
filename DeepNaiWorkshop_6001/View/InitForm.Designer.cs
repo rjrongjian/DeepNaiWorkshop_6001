@@ -34,9 +34,9 @@ namespace DeepNaiWorkshop_6001.View
             CCWin.SkinControl.Animation animation1 = new CCWin.SkinControl.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitForm));
             this.loadingPanel = new CCWin.SkinControl.SkinPanel();
+            this.loadingAnimator = new CCWin.SkinControl.SkinAnimator(this.components);
             this.initControl21 = new DeepNaiWorkshop_6001.View.InitControl2();
             this.initControl11 = new DeepNaiWorkshop_6001.View.InitControl1();
-            this.loadingAnimator = new CCWin.SkinControl.SkinAnimator(this.components);
             this.loadingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,26 +54,6 @@ namespace DeepNaiWorkshop_6001.View
             this.loadingPanel.NormlBack = null;
             this.loadingPanel.Size = new System.Drawing.Size(628, 330);
             this.loadingPanel.TabIndex = 0;
-            // 
-            // initControl21
-            // 
-            this.initControl21.BackColor = System.Drawing.Color.Transparent;
-            this.loadingAnimator.SetDecoration(this.initControl21, CCWin.SkinControl.DecorationType.None);
-            this.initControl21.Location = new System.Drawing.Point(164, 75);
-            this.initControl21.Name = "initControl21";
-            this.initControl21.Size = new System.Drawing.Size(300, 180);
-            this.initControl21.TabIndex = 1;
-            this.initControl21.Visible = false;
-            // 
-            // initControl11
-            // 
-            this.initControl11.BackColor = System.Drawing.Color.Transparent;
-            this.loadingAnimator.SetDecoration(this.initControl11, CCWin.SkinControl.DecorationType.None);
-            this.initControl11.Location = new System.Drawing.Point(164, 75);
-            this.initControl11.Name = "initControl11";
-            this.initControl11.Size = new System.Drawing.Size(300, 180);
-            this.initControl11.TabIndex = 0;
-            this.initControl11.Visible = false;
             // 
             // loadingAnimator
             // 
@@ -95,6 +75,26 @@ namespace DeepNaiWorkshop_6001.View
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 1F;
             this.loadingAnimator.DefaultAnimation = animation1;
+            // 
+            // initControl21
+            // 
+            this.initControl21.BackColor = System.Drawing.Color.Transparent;
+            this.loadingAnimator.SetDecoration(this.initControl21, CCWin.SkinControl.DecorationType.None);
+            this.initControl21.Location = new System.Drawing.Point(164, 75);
+            this.initControl21.Name = "initControl21";
+            this.initControl21.Size = new System.Drawing.Size(300, 180);
+            this.initControl21.TabIndex = 1;
+            this.initControl21.Visible = false;
+            // 
+            // initControl11
+            // 
+            this.initControl11.BackColor = System.Drawing.Color.Transparent;
+            this.loadingAnimator.SetDecoration(this.initControl11, CCWin.SkinControl.DecorationType.None);
+            this.initControl11.Location = new System.Drawing.Point(164, 75);
+            this.initControl11.Name = "initControl11";
+            this.initControl11.Size = new System.Drawing.Size(300, 180);
+            this.initControl11.TabIndex = 0;
+            this.initControl11.Visible = false;
             // 
             // InitForm
             // 
@@ -119,7 +119,9 @@ namespace DeepNaiWorkshop_6001.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "";
             this.TitleColor = System.Drawing.Color.IndianRed;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InitForm_FormClosing);
             this.Load += new System.EventHandler(this.InitForm_Load);
+            this.Shown += new System.EventHandler(this.InitForm_Shown);
             this.loadingPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

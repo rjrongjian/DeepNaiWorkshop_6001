@@ -1,4 +1,5 @@
-﻿using DeepNaiWorkshop_6001.Service;
+﻿using DeepNaiWorkshop_6001.Model;
+using DeepNaiWorkshop_6001.Service;
 using DeepNaiWorkshop_6001.view;
 using DeepNaiWorkshop_6001.View;
 using System;
@@ -13,7 +14,7 @@ namespace DeepNaiWorkshop_6001.controller
 {
     class MainFormController
     {
-        private MainForm mainForm;
+        private MainForm mainForm { get; set; }
         private InitForm initForm;
         private MemberService memberService;
         private MovieService movieService;
@@ -66,18 +67,27 @@ namespace DeepNaiWorkshop_6001.controller
             initForm.Visible = false;
             if (!initForm.IsDisposed && !initForm.Disposing)
             {
+                MyAppConfig.isNormalCloseInitForm = true;//正常关闭app
                 initForm.Close();
 
             }
             initForm = null;
-
-
+            
 
             //主窗口展示
             mainForm = new MainForm();
             mainForm.Visible = true;
             Application.Run(mainForm);//开始 win32 的窗口消息循环机制。这样能保持主窗体不关闭程序就一直处于消息循环的不关闭状态
 
+            
+
+
+
+        }
+
+        public MainForm GetMainForm()
+        {
+            return this.mainForm;
         }
 
     }

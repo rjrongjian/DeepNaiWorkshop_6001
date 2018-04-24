@@ -1,4 +1,7 @@
 ﻿using CCWin;
+using DeepNaiWorkshop_6001.Model;
+using DeepNaiWorkshop_6001.MyTool;
+using DeepNaiWorkshop_6001.view;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,7 @@ namespace DeepNaiWorkshop_6001.View
 {
     public partial class InitForm : CCSkinMain
     {
+        private MainForm mainForm;
         public InitForm()
         {
             InitializeComponent();
@@ -45,6 +49,34 @@ namespace DeepNaiWorkshop_6001.View
         public void InitAnimatorAsyn()
         {
             new Thread(InitAnimator).Start();
+        }
+
+        private void InitForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (mainForm==null||!mainForm.IsShowFirst())//说明选择关闭初始化页面是在还未到主界面的情况，此时关闭，退出应用
+            //{
+            //    MySystemUtil.Exit("初始化阶段，关闭应用");
+            //}
+            if (MyAppConfig.isNormalCloseInitForm)
+            {
+                return;
+            }
+            if (!MyAppConfig.isFirstShownForMainForm)
+            {
+                MySystemUtil.Exit("初始化阶段，关闭应用");
+            }
+
+
+        }
+
+        public void setMainform(MainForm mainform)
+        {
+            this.mainForm = mainform;
+        }
+
+        private void InitForm_Shown(object sender, EventArgs e)
+        {
+            MyAppConfig.isFirstShownForInitForm = true;
         }
     }
 }

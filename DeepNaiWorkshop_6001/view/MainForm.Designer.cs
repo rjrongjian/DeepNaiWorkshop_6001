@@ -45,7 +45,6 @@
             this.skinPanel1.SuspendLayout();
             this.moviePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPushPanel1)).BeginInit();
-            this.Visible = false;
             this.skinPushPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,8 +222,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
             this.BackToColor = false;
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.ControlBoxActive = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(77)))));
-            this.ControlBoxDeactive = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(66)))));
             this.ControlBoxOffset = new System.Drawing.Point(6, 8);
             this.ControlBoxSpace = 5;
             this.Controls.Add(this.memberControl);
@@ -237,12 +234,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ICoOffset = new System.Drawing.Point(8, 3);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "MainForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "";
             this.TitleColor = System.Drawing.Color.IndianRed;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.mediaPanel)).EndInit();
             this.skinPanel1.ResumeLayout(false);
             this.skinPanel1.PerformLayout();

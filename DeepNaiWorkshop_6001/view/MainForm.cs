@@ -1,4 +1,6 @@
 ﻿using CCWin;
+using DeepNaiWorkshop_6001.Model;
+using DeepNaiWorkshop_6001.MyTool;
 using DeepNaiWorkshop_6001.service;
 using DeepNaiWorkshop_6001.View;
 using System;
@@ -14,11 +16,13 @@ using System.Windows.Forms;
 
 namespace DeepNaiWorkshop_6001.view
 {
+    
     //public partial class MainForm : Skin_Mac
     public partial class MainForm : CCSkinMain
     {
         public MainForm()
         {
+            
             InitializeComponent();
         }
 
@@ -132,5 +136,18 @@ namespace DeepNaiWorkshop_6001.view
         {
             
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //目前关闭主窗体退出应用
+            //MySystemUtil.Exit("关闭主窗体退出应用...");
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)//当窗体首次被展示之前，关闭初始化窗口，退出应用
+        {
+            MyAppConfig.isFirstShownForMainForm = true;
+        }
+
+        
     }
 }

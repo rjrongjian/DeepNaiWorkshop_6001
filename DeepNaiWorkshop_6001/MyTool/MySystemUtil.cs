@@ -10,6 +10,7 @@ namespace DeepNaiWorkshop_6001.MyTool
     {
         public static void Exit(string message)
         {
+            Console.WriteLine(message);
             MyFileLog.WriteExitToLog(message);
             //强制退出
             System.Environment.Exit(0);
