@@ -19,7 +19,6 @@ namespace DeepNaiWorkshop_6001.MyTool
             streamWriter.WriteLine(DateTime.Now.ToLongTimeString() + "=>" + str);
             streamWriter.WriteLine("---------------------------------------------------------");
             streamWriter.Close();
-
         }
 
         internal static void WriteExceptionToLogWithExit(string v)
