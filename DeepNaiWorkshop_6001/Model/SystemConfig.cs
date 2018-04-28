@@ -17,7 +17,7 @@ namespace DeepNaiWorkshop_6001.Model
         public static int durationOfTemporaryMembers = 30;//分为单位
         public static String registryRootDir = "dyxf\\test";
         public static String localSystemConfigFile = "sc.dyxf";
-        public static String systemConfigUrl = webRoot + "/sc.json";
+        public static String systemConfigUrl = webRoot + "/"+ localSystemConfigFile;//系统配置文件的路径
 
         //系统使用的参数，无需关注
         public static bool isFirstShownForInitForm = false;

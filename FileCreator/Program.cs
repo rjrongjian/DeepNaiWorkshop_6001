@@ -17,7 +17,7 @@ namespace FileCreator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //SystemConfigApp.T1();
+
             Application.Run(new Form1());
         }
     }
