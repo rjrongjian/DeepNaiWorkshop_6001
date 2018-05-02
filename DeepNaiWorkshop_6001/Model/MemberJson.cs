@@ -10,7 +10,6 @@ namespace DeepNaiWorkshop_6001.Model
     {
         public int ExpiredDays { set; get; }//时长 天为单位
         public long ExpireTime { set; get; }//过期日期20180503
-        public List<String> Permissions { set; get; }
-        public string MemberType { set; get; }//老司机 普通会员
+        public string MemberLevel { set; get; }//观影级别，老司机 1 普通会员 0   影视资源中所有模块都会有一个标码，MemberJson.MemberLevel>=MovieResources.MemberLevel，此模块就显示
     }
 }

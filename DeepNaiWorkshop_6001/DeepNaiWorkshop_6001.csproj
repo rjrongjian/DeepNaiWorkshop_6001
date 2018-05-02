@@ -100,6 +100,9 @@
     <Compile Include="Model\HttpResponseJson.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberJson.cs" />
+    <Compile Include="Model\ResourceMoviesJson.cs" />
+    <Compile Include="Model\ResourceMovie.cs" />
+    <Compile Include="Model\ResourceModule.cs" />
     <Compile Include="Model\SystemConfig.cs" />
     <Compile Include="Model\SystemConfigJson.cs" />
     <Compile Include="MyTool\HttpCodeUtil.cs" />
