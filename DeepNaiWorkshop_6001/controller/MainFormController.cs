@@ -47,7 +47,6 @@ namespace DeepNaiWorkshop_6001.controller
             initForm.InitAnimator();
 
             //加载系统信息
-            //TODO
             systemService = new SystemService();
             systemService.Reload();
 
@@ -87,11 +86,18 @@ namespace DeepNaiWorkshop_6001.controller
             mainForm.Visible = true;
             Application.Run(mainForm);//开始 win32 的窗口消息循环机制。这样能保持主窗体不关闭程序就一直处于消息循环的不关闭状态
 
+            
+
             //判断校验会员是否可用
-            if (!memberService.CanUseMember(systemService.getCurrentSystemConfigJson()))
+            if (!memberService.CanUseMember(systemService.getCurrentSystemConfigJson(),memberService.GetCurrentLoadMember()))
             {
                 //TODO
                 mainForm.ShowModalWindow(memberService.GetCurrentLoadMember());
+            }
+            else
+            {
+                //开启定时器，记录临时会员时间
+                mainForm.StartRecordMemberTime();
             }
 
 

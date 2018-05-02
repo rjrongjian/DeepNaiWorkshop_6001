@@ -1,4 +1,5 @@
 ﻿using DeepNaiWorkshop_6001.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -118,6 +119,28 @@ namespace DeepNaiWorkshop_6001.MyTool
                     return Encoding.UTF8.GetString(outputStream.ToArray());
                 }
             }
+        }
+        /// <summary>
+        /// 传输过来的base64字符串上多包含了?，得去掉
+        /// </summary>
+        /// <param name="base64Str"></param>
+        /// <returns></returns>
+        public static string format(string base64Str)
+        {
+            if (string.IsNullOrWhiteSpace(base64Str))
+            {
+                return "";
+            }
+            else
+            {
+                return base64Str.Replace("?", "");
+            }
+            
+        }
+        
+        public static SystemConfigJson ParseForSystemConfigJson(string content)
+        {
+            return JsonConvert.DeserializeObject<SystemConfigJson>(MyVal.DecodeForSysconfig(content));
         }
 
     }

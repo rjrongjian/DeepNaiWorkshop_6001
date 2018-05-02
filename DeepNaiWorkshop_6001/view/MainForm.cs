@@ -94,6 +94,28 @@ namespace DeepNaiWorkshop_6001.view
             //等到所有的动画将完成
             animator.WaitAllAnimations();
         }
+
+        internal void StartRecordMemberTime()
+        {
+            this.timer1.Enabled = true;
+        }
+
+        public void RecordMemberTime(object sender, EventArgs e)
+        {
+            //获取当前用户已经使用的时长
+            int time = MySystemUtil.GetRegistryMemberUsedData();
+            if(time>= SystemConfig.durationOfTemporaryMembers)//已经达到用户免费使用的时长，不在记录
+            {
+                return;
+            }
+            else
+            {
+                int step = this.timer1.Interval / 1000;//秒为单位
+                MySystemUtil.SetRegistryMemberUsedData(step);
+            }
+            
+        }
+
         /// <summary>
         /// 隐藏账户panel
         /// </summary>
@@ -160,6 +182,7 @@ namespace DeepNaiWorkshop_6001.view
         {
             SystemConfig.isFirstShownForMainForm = true;
         }
+
 
         
     }

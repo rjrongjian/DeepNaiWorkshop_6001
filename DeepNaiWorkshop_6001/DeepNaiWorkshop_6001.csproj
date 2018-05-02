@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\MainFormController.cs" />
+    <Compile Include="Model\HttpResponseJson.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberJson.cs" />
     <Compile Include="Model\SystemConfig.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="MyTool\HttpCode\HttpResults.cs" />
     <Compile Include="MyTool\HttpCode\OtherHelper.cs" />
     <Compile Include="MyTool\HttpCode\XJHTTP.cs" />
+    <Compile Include="MyTool\MailTool.cs" />
     <Compile Include="MyTool\MyDateUtil.cs" />
     <Compile Include="MyTool\MyFileLog.cs" />
     <Compile Include="MyTool\MyFileUtil.cs" />

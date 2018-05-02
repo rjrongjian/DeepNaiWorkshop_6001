@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DeepNaiWorkshop_6001.Model;
 using DeepNaiWorkshop_6001.MyTool;
 using Newtonsoft.Json;
@@ -17,9 +18,11 @@ namespace DeepNaiWorkshop_6001.Service
             //每次启动重新获取一次系统配置，如果出现异常或者不存在就用默认的配置。
             try
             {
-                string content = HttpCodeUtil.GetRequest(SystemConfig.systemConfigUrl, null);
-                content = MyVal.DecodeForSysconfig(content);
-                systemConfigJson = JsonConvert.DeserializeObject<SystemConfigJson>(content);
+                //string content = HttpCodeUtil.GetRequest(SystemConfig.systemConfigUrl, null); //传输过来的串可能存在?
+                string content = HttpCodeUtil.HttpGet(SystemConfig.systemConfigUrl, "");
+               
+                systemConfigJson = MyVal.ParseForSystemConfigJson(content);
+                
             }
             catch(Exception e)
             {

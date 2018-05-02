@@ -20,6 +20,5 @@ namespace DeepNaiWorkshop_6001.Model
         public int isMustUpgrade;//是否强制升级 1是 0否
 
 
-
     }
 }

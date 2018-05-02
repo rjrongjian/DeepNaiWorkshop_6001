@@ -253,6 +253,7 @@ namespace DeepNaiWorkshop_6001.MyTool.HttpCode
             }
 
             #endregion
+            Console.WriteLine("获取的内容aa："+ result.Html);
             return result;
         }
         /// <summary>

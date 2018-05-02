@@ -74,9 +74,14 @@ namespace DeepNaiWorkshop_6001.MyTool
         /// <returns></returns>
         public static int GetRegistryMemberUsedData()
         {
-            string registryRootDir = SystemConfig.registryRootDir;
+            string registryRootDir = SystemConfig.registryRootKey;
             RegistryKey lm = Registry.CurrentUser;
-            RegistryKey software = lm.OpenSubKey("Software\\Dyxf\\"+SystemConfig.registryRootDir, true);
+            RegistryKey software = lm.OpenSubKey("Software\\Dyxf\\"+SystemConfig.registryRootKey, true);
+            if (software == null)
+            {
+                return 0;//说明定时器还没有在此字段中记录数据，返回0，代表此用户还未使用过此数据
+            }
+            //空指针了
             string m = software.GetValue("m", "").ToString();
             
             if ("".Equals(m))//说明定时器还没有在此字段中记录数据，返回0，代表此用户还未使用过此数据
@@ -88,6 +93,26 @@ namespace DeepNaiWorkshop_6001.MyTool
                 return Convert.ToInt32(m);
             }
 
+        }
+
+        internal static void SetRegistryMemberUsedData(int step)
+        {
+            string registryRootDir = SystemConfig.registryRootKey;
+            RegistryKey lm = Registry.CurrentUser;
+            RegistryKey software = lm.OpenSubKey("Software\\Dyxf\\" , true);
+            if (software == null)
+            {
+                software = lm.CreateSubKey("Software\\Dyxf\\", true);
+               
+            }
+
+            int time = (int)software.GetValue(SystemConfig.registryRootKey, 0);
+            software.SetValue(SystemConfig.registryRootKey,time + step);
+        }
+
+        public static string getAppRoorPath()
+        {
+            return AppDomain.CurrentDomain.BaseDirectory;
         }
     }
 }

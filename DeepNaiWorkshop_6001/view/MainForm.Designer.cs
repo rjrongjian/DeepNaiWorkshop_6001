@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            CCWin.SkinControl.Animation animation1 = new CCWin.SkinControl.Animation();
+            CCWin.SkinControl.Animation animation3 = new CCWin.SkinControl.Animation();
             this.mediaPanel = new CCWin.SkinControl.SkinPushPanel();
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@
             this.skinPushPanel1 = new CCWin.SkinControl.SkinPushPanel();
             this.pushPanelItem1 = new CCWin.SkinControl.PushPanelItem();
             this.memberControl = new DeepNaiWorkshop_6001.View.MemberControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mediaPanel)).BeginInit();
             this.skinPanel1.SuspendLayout();
             this.moviePanel.SuspendLayout();
@@ -149,22 +150,22 @@
             // 
             this.animator.AnimationType = CCWin.SkinControl.AnimationType.Transparent;
             this.animator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.animator.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 1F;
+            this.animator.DefaultAnimation = animation3;
             // 
             // moviePanel
             // 
@@ -215,6 +216,12 @@
             this.memberControl.TabIndex = 2;
             this.memberControl.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 20000;
+            this.timer1.Enabled = false;
+            this.timer1.Tick += new System.EventHandler(this.RecordMemberTime);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -264,5 +271,6 @@
         private CCWin.SkinControl.SkinButton skinButton3;
         private System.Windows.Forms.Label label4;
         private View.MemberControl memberControl;
+        private System.Windows.Forms.Timer timer1;
     }
 }
