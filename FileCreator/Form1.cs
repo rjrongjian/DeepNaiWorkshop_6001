@@ -117,5 +117,10 @@ namespace FileCreator
             this.textBox6.Text = Convert.ToString(SystemConfig.version);
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

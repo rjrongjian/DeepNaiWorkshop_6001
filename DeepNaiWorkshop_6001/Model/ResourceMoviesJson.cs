@@ -8,6 +8,7 @@ namespace DeepNaiWorkshop_6001.Model
 {
     public class ResourceMoviesJson
     {
+        public long updateTime;//主要是为了同步内存和文件中哪个最新
         public List<ResourceModule> resourceList;
     }
 }
