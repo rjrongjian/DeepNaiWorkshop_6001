@@ -220,5 +220,75 @@ namespace FileCreator
 
             }
         }
+        /// <summary>
+        /// 从发卡平台获取的已出售的卡集合
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //选择订单数据
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "(txt文件)|*.txt";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                textBox13.Text = file.FileName;
+
+            }
+        }
+        /// <summary>
+        /// 更新会员文件超时时间(认为码是当前时间出售的（且只看年月日，忽略后面的部分）)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.textBox12.Text))
+            {
+
+                MessageBox.Show("请设置从服务器导下来的会员码文件夹");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(this.textBox13.Text))
+            {
+
+                MessageBox.Show("请设置从发卡平台获取的已经出售的会员码");
+                return;
+            }
+            //这里认为发卡平台下载的出售的码的文件中，每行一个码，且文件中只包含码
+            List<string> saledCodeList = MyFileUtil.readFile(this.textBox13.Text);
+            foreach(string saledCode in saledCodeList)
+            {
+                string memberFilePath = this.textBox12.Text + saledCode + SystemConfig.memberCodeFileSuffix;
+                string updateMemberFileDir = this.textBox12.Text + "needUploadServerForUpdateExpire\\";
+                string updateMemberFilePath = updateMemberFileDir+ saledCode + SystemConfig.memberCodeFileSuffix;
+                MyFileUtil.CreateDir(updateMemberFileDir);
+                if (!File.Exists(memberFilePath))
+                {
+                    MessageBox.Show("已被出售的会员码："+ saledCode+"文件不存在请检查问题");
+                    return;
+                }
+                //读取文件内容，并转成对象
+                using (StreamReader sr = new StreamReader(memberFilePath, Encoding.UTF8))
+                {
+                    String memberJson = sr.ReadToEnd();
+                    MemberJson member = SystemConfigApp.ParseForMemberJson(memberJson);
+
+                    //更新超时时间
+                    member.ExpireTime = Convert.ToInt64(MyDateUtil.GetTimeStamp(System.DateTime.Now, 13));
+
+                    using (StreamWriter sw = new StreamWriter(File.Open(updateMemberFilePath, FileMode.Create), Encoding.UTF8))
+                    {
+                        string jsonString = JsonConvert.SerializeObject(member, Formatting.Indented);
+                        jsonString = SystemConfigApp.EncodeForMemberFile(jsonString);
+                        sw.Write(jsonString);
+                        sw.Flush();
+                    }
+                }
+            }
+
+            MessageBox.Show("更新完成");
+        }
     }
 }

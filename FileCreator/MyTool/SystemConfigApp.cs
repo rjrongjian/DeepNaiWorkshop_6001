@@ -1,4 +1,6 @@
-﻿using DeepNaiWorkshop_6001.MyTool;
+﻿using DeepNaiWorkshop_6001.Model;
+using DeepNaiWorkshop_6001.MyTool;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -135,6 +137,13 @@ namespace FileCreator.MyTool
             string privateKeyXmlString = rsa.ToXmlString(true);
             Console.WriteLine("公钥："+publicKeyXmlString );
             Console.WriteLine("私钥："+ privateKeyXmlString);
+        }
+
+
+        public static MemberJson ParseForMemberJson(string content)
+        {
+            String contentJson = MyVal.DecodeForMemberFile(content);
+            return JsonConvert.DeserializeObject<MemberJson>(contentJson);
         }
     }
 }

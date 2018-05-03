@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeepNaiWorkshop_6001.MyTool
 {
-    class MyDateUtil
+    public class MyDateUtil
     {
 
         /// <summary>

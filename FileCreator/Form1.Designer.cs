@@ -124,6 +124,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -558,6 +559,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.label33);
             this.groupBox9.Controls.Add(this.button8);
             this.groupBox9.Controls.Add(this.label24);
             this.groupBox9.Controls.Add(this.label23);
@@ -576,43 +578,45 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(173, 155);
+            this.button8.Location = new System.Drawing.Point(173, 157);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(141, 20);
             this.button8.TabIndex = 10;
             this.button8.Text = "更新会员文件超时时间";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(8, 159);
+            this.label24.Location = new System.Drawing.Point(6, 140);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(89, 12);
+            this.label24.Size = new System.Drawing.Size(245, 12);
             this.label24.TabIndex = 9;
-            this.label24.Text = "并上传服务器。";
+            this.label24.Text = "，用于告知更新了几个文件，并上传服务器。";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(10, 136);
+            this.label23.Location = new System.Drawing.Point(6, 120);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(311, 12);
+            this.label23.Size = new System.Drawing.Size(317, 12);
             this.label23.TabIndex = 8;
-            this.label23.Text = "在Step1目录下创建temp目录，用于告知更新了几个文件，";
+            this.label23.Text = "在Step1目录下创建needUploadServerForUpdateExpire目录";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(242, 99);
+            this.button7.Location = new System.Drawing.Point(242, 87);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 7;
             this.button7.Text = "选择文件";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(10, 101);
+            this.textBox13.Location = new System.Drawing.Point(10, 89);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(226, 21);
             this.textBox13.TabIndex = 6;
@@ -646,7 +650,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(10, 76);
+            this.label21.Location = new System.Drawing.Point(10, 71);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(305, 12);
             this.label21.TabIndex = 0;
@@ -717,9 +721,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(13, 246);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(317, 12);
+            this.label20.Size = new System.Drawing.Size(311, 12);
             this.label20.TabIndex = 6;
-            this.label20.Text = "例如：temp->充值会员_1->会员文件和会员码（合集）.txt";
+            this.label20.Text = "例如：new->充值会员_1->会员文件和会员码（合集）.txt";
             // 
             // label19
             // 
@@ -1132,6 +1136,16 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "选择初始资源文件：";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(11, 166);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(149, 12);
+            this.label33.TabIndex = 11;
+            this.label33.Text = "本地时间做服务器时间！！";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1277,6 +1291,7 @@
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label33;
     }
 }
 

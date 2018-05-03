@@ -48,5 +48,33 @@ namespace DeepNaiWorkshop_6001.MyTool
                 Directory.CreateDirectory(fileDir);//创建新路径
             }
         }
+        /// <summary>
+        /// 按行读取文件，每行一条
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public static List<string> readFile(string filePath)
+        {
+            
+            List<string> list = new List<string>();
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
+                {
+                    //使用StreamReader类来读取文件
+                    sr.BaseStream.Seek(0, SeekOrigin.Begin);
+                    // 从数据流中读取每一行，直到文件的最后一行，并在richTextBox1中显示出内容
+                    string strLine = sr.ReadLine();
+                    while (strLine != null)
+                    {
+                        list.Add(strLine);
+                        strLine = sr.ReadLine();
+                    }
+                    //关闭此StreamReader对象
+                    sr.Close();
+                }
+            }
+            return list;
+        }
     }
 }
