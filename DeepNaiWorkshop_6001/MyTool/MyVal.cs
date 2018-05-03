@@ -53,21 +53,7 @@ namespace DeepNaiWorkshop_6001.MyTool
         /// <returns></returns>
         public static string DecodeForMemberFile(string str)
         {
-            byte[] bs = Encoding.UTF8.GetBytes(MyVal.Base64Decode(str));
-            if (bs.Length >= 3)
-            {
-                byte t = bs[0];
-                bs[0] = bs[2];
-                bs[2] = t;
-            }
-
-            byte[] bs2 = new byte[bs.Length];
-            for(int i = bs.Length - 1; i >= 0; i--)
-            {
-                bs2[bs2.Length - i - 1] = bs[i];
-            }
-
-            return Encoding.UTF8.GetString(bs2);
+            return RsaDecrypt(str, SystemConfig.rsaPrivateKey);
         }
 
        

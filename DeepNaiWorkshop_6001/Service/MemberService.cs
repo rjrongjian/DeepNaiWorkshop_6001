@@ -48,43 +48,38 @@ namespace DeepNaiWorkshop_6001.Service
                 //判断充值用户是否有效
                 if (member.MemberJson.ExpiredDays > 0)
                 {
-                    if(member.MemberJson.Permissions!=null&& member.MemberJson.Permissions.Count > 0)
+                    
+                    if (member.MemberJson.ExpireTime == 0)//说明此会员还未来的及更新他的超时时间，所以认为是有效的
                     {
-                        if (member.MemberJson.ExpireTime == 0)//说明此会员还未来的及更新他的超时时间，所以认为是有效的
+                        //尝试去下载对应会员码会员文件
+                        string memberUrl = getMemberUrl(member.MemberCode);
+                        try
                         {
-                            //尝试去下载对应会员码会员文件
-                            string memberUrl = getMemberUrl(member.MemberCode);
-                            try
-                            {
-                                string content = HttpCodeUtil.HttpGet(memberUrl, "");
-                            }catch(Exception e)
-                            {
-                                string logContent = "本地缓存：" + member.MemberCode+"，删除本地缓存文件"+SystemConfig.memberFile + "，异常信息：" + e;
-                                MyFileLog.WriteErrTolog(logContent);
-                                File.Delete(MySystemUtil.getAppRoorPath() + SystemConfig.memberFile);
+                            string content = HttpCodeUtil.HttpGet(memberUrl, "");
+                        }catch(Exception e)
+                        {
+                            string logContent = "本地缓存：" + member.MemberCode+"，删除本地缓存文件"+SystemConfig.memberFile + "，异常信息：" + e;
+                            MyFileLog.WriteErrTolog(logContent);
+                            File.Delete(MySystemUtil.getAppRoorPath() + SystemConfig.memberFile);
 
-                            }
+                        }
                             
 
-                            return true;
-                        }
-                        else
-                        {
-                            long currentServerTime = MySystemUtil.GetServerTime(systemConfigJson.isUseOtherServerTime,systemConfigJson.serverTimeFromUrlResponseHeaderDate);
-                            if(currentServerTime> member.MemberJson.ExpireTime)
-                            {
-                                return false;
-                            }
-                            else
-                            {
-                                return true;
-                            }
-                        }
+                        return true;
                     }
                     else
                     {
-                        return false;
+                        long currentServerTime = MySystemUtil.GetServerTime(systemConfigJson.isUseOtherServerTime,systemConfigJson.serverTimeFromUrlResponseHeaderDate);
+                        if(currentServerTime> member.MemberJson.ExpireTime)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
                     }
+                   
                 }
                 else
                 {

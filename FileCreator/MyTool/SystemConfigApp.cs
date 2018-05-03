@@ -51,23 +51,8 @@ namespace FileCreator.MyTool
         /// <returns></returns>
         public static string EncodeForMemberFile(string str)
         {
-            byte[] bs = Encoding.UTF8.GetBytes(str);
-            byte[] bs2 = new byte[bs.Length];
-            //倒叙
-            for (int i = bs.Length - 1; i >= 0; i--)
-            {
-                bs2[bs2.Length - i - 1] = bs[i];
-            }
-            if (bs2.Length >= 3)
-            {
-                byte t = bs2[0];
-                bs2[0] = bs[2];
-                bs2[2] = t;
-            }
-
             //压缩bcd，然后在base64
-
-            return Base64Encode(System.Text.Encoding.UTF8.GetString(bs2));
+            return RsaEncrypt(str, SystemConfigApp.rsaPublicKey);
         }
 
         /// <summary>

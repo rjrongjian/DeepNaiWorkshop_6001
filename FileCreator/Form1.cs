@@ -1,5 +1,6 @@
 ﻿using DeepNaiWorkshop_6001.Model;
 using DeepNaiWorkshop_6001.MyTool;
+using FileCreator.Model;
 using FileCreator.MyTool;
 using Newtonsoft.Json;
 using System;
@@ -121,6 +122,103 @@ namespace FileCreator
         private void button4_Click(object sender, EventArgs e)
         {
 
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择生成文件所存放的目录";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                if (string.IsNullOrEmpty(dialog.SelectedPath))
+                {
+                    MessageBox.Show("请选择生成文件所存放的目录");
+                    return ;
+                }
+                string dirPath = dialog.SelectedPath + "\\";
+                this.textBox11.Text = dirPath;
+            }
+            //把打开目录的代码封装了就不能正常操作
+            /*
+            MyResponse myResponse = MySystemUtil2.OpenDir();
+            if (myResponse.isSuccess)//获取文件目录成功
+            {
+                this.textBox11.Text = myResponse.message;
+            }
+            else
+            {
+                MessageBox.Show(myResponse.message);
+                return;
+            }
+            */
+        }
+        /// <summary>
+        /// 开始生成会员码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //判断会员码目录是否为空
+            if (string.IsNullOrWhiteSpace(this.textBox11.Text)) {
+                MessageBox.Show("请先设置从服务器导下来的会员码目录");
+                return;
+            }
+
+            int memberLevel = radioButton7.Checked ? 1 : 0;
+
+            //新生成的会员码采取追加方式，即只有在服务器上导下来的才算做正在使用的码
+            //不包含目前已经创建和已在使用的会员码
+            List<string> canUseCodeList = MemberCodeUtil.CreateUsableCode(this.textBox11.Text, Convert.ToInt32(this.numericUpDown2.Value));
+            //生成会员文件的同时，为了方便在发卡平台上传会员码，需要生成一个txt文件记录了新生成的会员码（文件名描述了这个码的会员等级、时长）
+            string codeListFilePath = MemberCodeUtil.GetCodeListFilePath(this.textBox11.Text, Convert.ToInt32(this.numericUpDown1.Value), memberLevel);
+
+            
+            using (StreamWriter sw = new StreamWriter(File.Open(codeListFilePath, FileMode.Append), Encoding.UTF8))
+            {
+                foreach (string code in canUseCodeList)
+                {
+                    string memberFileName = code + SystemConfig.memberCodeFileSuffix;
+                    
+                    //新创建的会员码文件路径
+                    string memberFilePath = MemberCodeUtil.GetMemberFilePath(this.textBox11.Text, Convert.ToInt32(this.numericUpDown1.Value), memberLevel, code);
+                    MemberJson memberJson = new MemberJson(Convert.ToInt32(numericUpDown1.Value), memberLevel);
+                    //开始将会员内容写入文件
+                    using (StreamWriter sw2 = new StreamWriter(File.Open(memberFilePath, FileMode.Create),Encoding.UTF8))
+                    {
+                        string jsonString = JsonConvert.SerializeObject(memberJson, Formatting.Indented);
+                        //加密会员数据
+                        jsonString = SystemConfigApp.EncodeForMemberFile(jsonString);
+                        sw2.Write(jsonString);
+                        sw2.Flush();
+                    }
+                    //每成功生成一个会员文件，就将会员码写入
+                    sw.WriteLine(code);
+                    sw.Flush();
+                }
+
+                
+            }
+            
+            MessageBox.Show("创建完成！");
+
+        }
+        /// <summary>
+        /// 选择从服务器上新导下来的会员码文件夹
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择生成文件所存放的目录";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                if (string.IsNullOrEmpty(dialog.SelectedPath))
+                {
+                    MessageBox.Show("请选择生成文件所存放的目录");
+                    return;
+                }
+                string dirPath = dialog.SelectedPath + "\\";
+                this.textBox12.Text = dirPath;
+
+            }
         }
     }
 }

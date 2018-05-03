@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace FileCreator.Model
 {
-    class MyResponse
+    public class MyResponse
     {
-        public bool isSuccess;
-        public string content;
-
-        public MyResponse(bool isSuccess,string content)
+        public bool isSuccess;//是否执行成功
+        public string message;//提示信息
+        public MyResponse(bool isSuccess,string message)
         {
             this.isSuccess = isSuccess;
-            this.content = content;
+            this.message = message;
         }
     }
 }

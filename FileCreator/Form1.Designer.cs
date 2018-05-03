@@ -97,33 +97,33 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.button13 = new System.Windows.Forms.Button();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.radioButton11 = new System.Windows.Forms.RadioButton();
             this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.label29 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.button13 = new System.Windows.Forms.Button();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -139,10 +139,10 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -625,6 +625,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "选择目录";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox12
             // 
@@ -678,9 +679,19 @@
             0,
             0,
             0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(43, 21);
             this.numericUpDown2.TabIndex = 9;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             // 
             // label25
             // 
@@ -699,6 +710,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "生成";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label20
             // 
@@ -800,7 +812,7 @@
             this.numericUpDown1.Size = new System.Drawing.Size(52, 21);
             this.numericUpDown1.TabIndex = 1;
             this.numericUpDown1.Value = new decimal(new int[] {
-            1,
+            7,
             0,
             0,
             0});
@@ -828,6 +840,7 @@
             // 
             this.textBox11.Location = new System.Drawing.Point(13, 41);
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(225, 21);
             this.textBox11.TabIndex = 1;
             // 
@@ -855,107 +868,6 @@
             this.tabPage3.Text = "资源文件生成器";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(13, 10);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(113, 12);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "选择初始资源文件：";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(15, 29);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(292, 21);
-            this.textBox14.TabIndex = 1;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(15, 56);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 23);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "生成空资源文件";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(131, 56);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 23);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "生成空资源文件";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.button12);
-            this.groupBox10.Controls.Add(this.label28);
-            this.groupBox10.Controls.Add(this.textBox15);
-            this.groupBox10.Controls.Add(this.button11);
-            this.groupBox10.Controls.Add(this.comboBox1);
-            this.groupBox10.Controls.Add(this.label27);
-            this.groupBox10.Location = new System.Drawing.Point(4, 89);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(338, 123);
-            this.groupBox10.TabIndex = 4;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "模块维护";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(9, 29);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(65, 12);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "现有模块：";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 20);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(244, 58);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(42, 23);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "添加";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(128, 58);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 21);
-            this.textBox15.TabIndex = 3;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(9, 61);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(113, 12);
-            this.label28.TabIndex = 4;
-            this.label28.Text = "要添加的模块名称：";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(11, 93);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(109, 24);
-            this.button12.TabIndex = 5;
-            this.button12.Text = "删除选定模块";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.button13);
@@ -976,39 +888,80 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "资源维护";
             // 
-            // groupBox12
+            // button13
             // 
-            this.groupBox12.Controls.Add(this.radioButton9);
-            this.groupBox12.Controls.Add(this.radioButton10);
-            this.groupBox12.Location = new System.Drawing.Point(14, 72);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(309, 48);
-            this.groupBox12.TabIndex = 0;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "观影级别";
+            this.button13.Location = new System.Drawing.Point(248, 235);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 13;
+            this.button13.Text = "同步数据";
+            this.button13.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // textBox17
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Checked = true;
-            this.radioButton9.Location = new System.Drawing.Point(150, 19);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(143, 16);
-            this.radioButton9.TabIndex = 3;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "充值会员（level：0）";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.textBox17.Location = new System.Drawing.Point(81, 207);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(242, 21);
+            this.textBox17.TabIndex = 12;
             // 
-            // radioButton10
+            // textBox16
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(20, 19);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(131, 16);
-            this.radioButton10.TabIndex = 2;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "老司机（level：1）";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.textBox16.Location = new System.Drawing.Point(81, 177);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(242, 21);
+            this.textBox16.TabIndex = 11;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(18, 212);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(65, 12);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "资源链接：";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(18, 182);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "电影名称：";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(125, 47);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(148, 20);
+            this.comboBox3.TabIndex = 8;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(15, 50);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(113, 12);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "模块中的电影资源：";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(78, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(148, 20);
+            this.comboBox2.TabIndex = 6;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(15, 27);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(65, 12);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "选中模块：";
             // 
             // groupBox13
             // 
@@ -1044,80 +997,140 @@
             this.radioButton12.Text = "web";
             this.radioButton12.UseVisualStyleBackColor = true;
             // 
-            // label29
+            // groupBox12
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 27);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(65, 12);
-            this.label29.TabIndex = 5;
-            this.label29.Text = "选中模块：";
+            this.groupBox12.Controls.Add(this.radioButton9);
+            this.groupBox12.Controls.Add(this.radioButton10);
+            this.groupBox12.Location = new System.Drawing.Point(14, 72);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(309, 48);
+            this.groupBox12.TabIndex = 0;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "观影级别";
             // 
-            // comboBox2
+            // radioButton9
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(78, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 20);
-            this.comboBox2.TabIndex = 6;
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Checked = true;
+            this.radioButton9.Location = new System.Drawing.Point(150, 19);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(143, 16);
+            this.radioButton9.TabIndex = 3;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "充值会员（level：0）";
+            this.radioButton9.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // radioButton10
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 47);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(148, 20);
-            this.comboBox3.TabIndex = 8;
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(20, 19);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(131, 16);
+            this.radioButton10.TabIndex = 2;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "老司机（level：1）";
+            this.radioButton10.UseVisualStyleBackColor = true;
             // 
-            // label30
+            // groupBox10
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(15, 50);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(113, 12);
-            this.label30.TabIndex = 7;
-            this.label30.Text = "模块中的电影资源：";
+            this.groupBox10.Controls.Add(this.button12);
+            this.groupBox10.Controls.Add(this.label28);
+            this.groupBox10.Controls.Add(this.textBox15);
+            this.groupBox10.Controls.Add(this.button11);
+            this.groupBox10.Controls.Add(this.comboBox1);
+            this.groupBox10.Controls.Add(this.label27);
+            this.groupBox10.Location = new System.Drawing.Point(4, 89);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(338, 123);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "模块维护";
             // 
-            // label31
+            // button12
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(18, 182);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(65, 12);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "电影名称：";
+            this.button12.Location = new System.Drawing.Point(11, 93);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(109, 24);
+            this.button12.TabIndex = 5;
+            this.button12.Text = "删除选定模块";
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // label32
+            // label28
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(18, 212);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(65, 12);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "资源链接：";
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(9, 61);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(113, 12);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "要添加的模块名称：";
             // 
-            // textBox16
+            // textBox15
             // 
-            this.textBox16.Location = new System.Drawing.Point(81, 177);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(242, 21);
-            this.textBox16.TabIndex = 11;
+            this.textBox15.Location = new System.Drawing.Point(128, 58);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(100, 21);
+            this.textBox15.TabIndex = 3;
             // 
-            // textBox17
+            // button11
             // 
-            this.textBox17.Location = new System.Drawing.Point(81, 207);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(242, 21);
-            this.textBox17.TabIndex = 12;
+            this.button11.Location = new System.Drawing.Point(244, 58);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(42, 23);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "添加";
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // comboBox1
             // 
-            this.button13.Location = new System.Drawing.Point(248, 235);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 13;
-            this.button13.Text = "同步数据";
-            this.button13.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(71, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(157, 20);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(9, 29);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 12);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "现有模块：";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(131, 56);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(110, 23);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "生成空资源文件";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(15, 56);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(110, 23);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "生成空资源文件";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(15, 29);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(292, 21);
+            this.textBox14.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(13, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(113, 12);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "选择初始资源文件：";
             // 
             // Form1
             // 
@@ -1154,14 +1167,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
 
         }
