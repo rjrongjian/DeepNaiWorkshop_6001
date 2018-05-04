@@ -28,6 +28,10 @@ namespace DeepNaiWorkshop_6001.Model
         public static String localSystemConfigFile = "sc.dyxf";
         public static String systemConfigUrl = webRoot + "/"+ localSystemConfigFile;//系统配置文件的路径
 
+        public static String resourceFileNameSuffix = ".dyxf"; //这个不能放在下面变量的下面，要不顺序初始化，会造成这个没被赋值
+        public static String resourceFileNameWithSuffix = "resource"+ resourceFileNameSuffix;//资源文件默认的文件名
+        
+
         //系统使用的参数，无需关注
         public static bool isFirstShownForInitForm = false;
         public static bool isFirstShownForMainForm = false;

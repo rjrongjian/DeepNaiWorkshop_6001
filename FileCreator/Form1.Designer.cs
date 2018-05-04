@@ -70,6 +70,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -100,9 +101,7 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -124,7 +123,11 @@
             this.button9 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -576,6 +579,16 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "步骤二（更新从快发卡平台出售的码的超时时间）：";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(11, 166);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(149, 12);
+            this.label33.TabIndex = 11;
+            this.label33.Text = "本地时间做服务器时间！！";
+            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(173, 157);
@@ -859,6 +872,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.textBox18);
+            this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.groupBox11);
             this.tabPage3.Controls.Add(this.groupBox10);
             this.tabPage3.Controls.Add(this.button10);
@@ -874,11 +890,11 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.button13);
-            this.groupBox11.Controls.Add(this.textBox17);
+            this.groupBox11.Controls.Add(this.button14);
             this.groupBox11.Controls.Add(this.textBox16);
-            this.groupBox11.Controls.Add(this.label32);
             this.groupBox11.Controls.Add(this.label31);
+            this.groupBox11.Controls.Add(this.textBox17);
+            this.groupBox11.Controls.Add(this.label32);
             this.groupBox11.Controls.Add(this.comboBox3);
             this.groupBox11.Controls.Add(this.label30);
             this.groupBox11.Controls.Add(this.comboBox2);
@@ -887,54 +903,40 @@
             this.groupBox11.Controls.Add(this.groupBox12);
             this.groupBox11.Location = new System.Drawing.Point(6, 222);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(335, 268);
+            this.groupBox11.Size = new System.Drawing.Size(335, 238);
             this.groupBox11.TabIndex = 5;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "资源维护";
+            this.groupBox11.Text = "添加资源";
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(248, 235);
+            this.button13.Location = new System.Drawing.Point(216, 467);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.Size = new System.Drawing.Size(125, 23);
             this.button13.TabIndex = 13;
-            this.button13.Text = "同步数据";
+            this.button13.Text = "同步数据到资源文件";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(81, 207);
+            this.textBox17.Location = new System.Drawing.Point(78, 180);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(242, 21);
             this.textBox17.TabIndex = 12;
             // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(81, 177);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(242, 21);
-            this.textBox16.TabIndex = 11;
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(18, 212);
+            this.label32.Location = new System.Drawing.Point(15, 185);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(65, 12);
             this.label32.TabIndex = 10;
             this.label32.Text = "资源链接：";
             // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(18, 182);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(65, 12);
-            this.label31.TabIndex = 9;
-            this.label31.Text = "电影名称：";
-            // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(125, 47);
             this.comboBox3.Name = "comboBox3";
@@ -952,6 +954,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(78, 23);
             this.comboBox2.Name = "comboBox2";
@@ -1058,6 +1061,7 @@
             this.button12.TabIndex = 5;
             this.button12.Text = "删除选定模块";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label28
             // 
@@ -1083,9 +1087,11 @@
             this.button11.TabIndex = 2;
             this.button11.Text = "添加";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(71, 25);
             this.comboBox1.Name = "comboBox1";
@@ -1103,48 +1109,83 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(131, 56);
+            this.button10.Location = new System.Drawing.Point(193, 56);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 23);
+            this.button10.Size = new System.Drawing.Size(148, 23);
             this.button10.TabIndex = 3;
-            this.button10.Text = "生成空资源文件";
+            this.button10.Text = "同步初始资源文件至内存";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(15, 56);
+            this.button9.Location = new System.Drawing.Point(6, 56);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 23);
+            this.button9.Size = new System.Drawing.Size(182, 23);
             this.button9.TabIndex = 2;
-            this.button9.Text = "生成空资源文件";
+            this.button9.Text = "根据上述地址，生成空资源文件";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(15, 29);
+            this.textBox14.Location = new System.Drawing.Point(10, 29);
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(292, 21);
+            this.textBox14.Size = new System.Drawing.Size(231, 21);
             this.textBox14.TabIndex = 1;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(13, 10);
+            this.label26.Location = new System.Drawing.Point(8, 10);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(113, 12);
             this.label26.TabIndex = 0;
             this.label26.Text = "选择初始资源文件：";
             // 
-            // label33
+            // button14
             // 
-            this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(11, 166);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(149, 12);
-            this.label33.TabIndex = 11;
-            this.label33.Text = "本地时间做服务器时间！！";
+            this.button14.Location = new System.Drawing.Point(195, 206);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 17;
+            this.button14.Text = "添加资源";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(78, 208);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(104, 21);
+            this.textBox16.TabIndex = 16;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(15, 213);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 15;
+            this.label31.Text = "电影名称：";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(247, 29);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
+            this.textBox18.Size = new System.Drawing.Size(89, 21);
+            this.textBox18.TabIndex = 14;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(251, 11);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(77, 12);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "默认文件名：";
             // 
             // Form1
             // 
@@ -1287,11 +1328,14 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBox18;
     }
 }
 

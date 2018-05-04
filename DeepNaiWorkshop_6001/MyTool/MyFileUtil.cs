@@ -76,5 +76,24 @@ namespace DeepNaiWorkshop_6001.MyTool
             }
             return list;
         }
+
+        public static void writeToFile(string filePath,string content)
+        {
+            using (StreamWriter sw = new StreamWriter(File.Open(filePath, FileMode.Create), Encoding.UTF8))
+            {
+                sw.Write(content);
+                sw.Flush();
+            }
+        }
+
+        public static string readFileAll(string filePath)
+        {
+            using (StreamReader sr = new StreamReader(filePath, Encoding.UTF8))
+            {
+                String content = sr.ReadToEnd();
+
+                return content;
+            }
+        }
     }
 }

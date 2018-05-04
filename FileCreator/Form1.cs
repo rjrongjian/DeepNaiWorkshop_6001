@@ -117,6 +117,13 @@ namespace FileCreator
             this.label11.Text = Convert.ToString(SystemConfig.version);
             this.textBox6.Text = Convert.ToString(SystemConfig.version);
 
+            this.textBox18.Text = SystemConfig.resourceFileNameWithSuffix;
+            this.comboBox1.ValueMember = "index";
+            this.comboBox1.DisplayMember = "moduleName";
+
+            this.comboBox2.ValueMember = "index";
+            this.comboBox2.DisplayMember = "moduleName";
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -289,6 +296,125 @@ namespace FileCreator
             }
 
             MessageBox.Show("更新完成");
+        }
+        private ResourceMoviesJson resourceMoviesJson = null;
+        private List<ResourceModuleForCombox> list = null;
+        /// <summary>
+        /// 生成空资源文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button9_Click(object sender, EventArgs e)
+        {
+            resourceMoviesJson = new ResourceMoviesJson();
+
+            resourceMoviesJson.resourceList = new List<ResourceModule>();
+            MyJsonUtil<ResourceMoviesJson> myJsonUtil = new MyJsonUtil<ResourceMoviesJson>();
+            string jsonStr = myJsonUtil.parseJsonObj(resourceMoviesJson);
+
+            //同步到文件中
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择生成文件所存放的目录";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                if (string.IsNullOrEmpty(dialog.SelectedPath))
+                {
+                    MessageBox.Show("请选择生成文件所存放的目录");
+                    return;
+                }
+                textBox14.Text = dialog.SelectedPath+"\\";
+                string filePath = textBox14.Text + SystemConfig.resourceFileNameWithSuffix;
+
+                MyFileUtil.writeToFile(filePath, jsonStr);
+                MessageBox.Show("初始空文件成功");
+            }
+
+
+        }
+        /// <summary>
+        /// 选择初始资源文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //选择订单数据
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "("+SystemConfig.resourceFileNameSuffix + "文件)|*"+ SystemConfig.resourceFileNameSuffix;
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                textBox14.Text = file.FileName;
+                string jsonStr = MyFileUtil.readFileAll(textBox14.Text);
+                MyJsonUtil<ResourceMoviesJson> myJsonUtil = new MyJsonUtil<ResourceMoviesJson>();
+                resourceMoviesJson = myJsonUtil.parseJsonStr(jsonStr);
+
+                //同步模块到combox中
+                List<ResourceModule> resourceModuleList = resourceMoviesJson.resourceList;
+                list = new List<ResourceModuleForCombox>();
+                foreach(ResourceModule resourceModule in resourceModuleList)
+                {
+                    list.Add(new ResourceModuleForCombox { index = resourceModuleList.Count, moduleName = resourceModule.name });
+                }
+                this.comboBox1.DataSource = list;
+                this.comboBox2.DataSource = list;
+
+
+                MessageBox.Show("同步数据成功");
+            }
+        }
+        /// <summary>
+        /// 添加模块
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.textBox15.Text))
+            {
+                MessageBox.Show("模块名不能为空");
+                return;
+            }
+            //给数据源添加一个
+            List<ResourceModule> resourceModuleList = resourceMoviesJson.resourceList;
+            resourceModuleList.Add( new ResourceModule { name = this.textBox15.Text , movieList = new List<ResourceMovie>()});
+
+            //给两个combox添加一个
+            list.Add(new ResourceModuleForCombox { index = resourceModuleList.Count, moduleName = this.textBox15.Text });
+            this.comboBox1.ValueMember = "index";
+            this.comboBox1.DisplayMember = "moduleName";
+            this.comboBox2.ValueMember = "index";
+            this.comboBox2.DisplayMember = "moduleName";
+            this.comboBox1.DataSource = list;
+            this.comboBox2.DataSource = list;
+            MessageBox.Show("添加模块成功！");
+        }
+
+        /// <summary>
+        /// 删除选定模块
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 添加资源
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 同步内存中的资源到文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

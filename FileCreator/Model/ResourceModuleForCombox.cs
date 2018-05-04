@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DeepNaiWorkshop_6001.Model
+namespace FileCreator.Model
 {
-    public class ResourceMoviesJson
+    class ResourceModuleForCombox
     {
-        public List<ResourceModule> resourceList;
+        public int index;
+        public string moduleName;
     }
 }

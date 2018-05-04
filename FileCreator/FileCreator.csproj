@@ -55,7 +55,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\MyResponse.cs" />
+    <Compile Include="Model\ResourceModuleForCombox.cs" />
     <Compile Include="MyTool\MemberCodeUtil.cs" />
+    <Compile Include="MyTool\MyJsonUtil.cs" />
     <Compile Include="MyTool\MyStringUtil.cs" />
     <Compile Include="MyTool\MySystemUtil2.cs" />
     <Compile Include="MyTool\SystemConfigApp.cs" />
