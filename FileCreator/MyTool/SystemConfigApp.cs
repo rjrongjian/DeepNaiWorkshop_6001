@@ -145,5 +145,28 @@ namespace FileCreator.MyTool
             String contentJson = MyVal.DecodeForMemberFile(content);
             return JsonConvert.DeserializeObject<MemberJson>(contentJson);
         }
+        /// <summary>
+        /// 单行数据加密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string EncodeLineForResourceFile(string str)
+        {
+            //压缩bcd，然后在base64
+            return RsaEncrypt(str, SystemConfigApp.rsaPublicKey);
+        }
+
+        /// <summary>
+        /// base64
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string EncodeForResourceFile(string str)
+        {
+            return Base64Encode(Encoding.UTF8, str);
+        }
+
+
+
     }
 }

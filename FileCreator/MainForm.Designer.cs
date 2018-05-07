@@ -1,6 +1,6 @@
 ﻿namespace FileCreator
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -98,8 +98,12 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -123,11 +127,6 @@
             this.button9 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -281,7 +280,7 @@
             this.radioButton5.Size = new System.Drawing.Size(35, 16);
             this.radioButton5.TabIndex = 27;
             this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "是";
+            this.radioButton5.Text = "否";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton6
@@ -391,7 +390,7 @@
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(35, 16);
             this.radioButton3.TabIndex = 27;
-            this.radioButton3.Text = "是";
+            this.radioButton3.Text = "否";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton4
@@ -433,7 +432,7 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(35, 16);
             this.radioButton2.TabIndex = 22;
-            this.radioButton2.Text = "是";
+            this.radioButton2.Text = "否";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -873,7 +872,6 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label34);
-            this.tabPage3.Controls.Add(this.textBox18);
             this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.groupBox11);
             this.tabPage3.Controls.Add(this.groupBox10);
@@ -887,6 +885,25 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "资源文件生成器";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(199, 10);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(137, 12);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "<-默认文件名(空文件时)";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(216, 467);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(125, 23);
+            this.button13.TabIndex = 13;
+            this.button13.Text = "同步数据到资源文件";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // groupBox11
             // 
@@ -908,15 +925,31 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "添加资源";
             // 
-            // button13
+            // button14
             // 
-            this.button13.Location = new System.Drawing.Point(216, 467);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(125, 23);
-            this.button13.TabIndex = 13;
-            this.button13.Text = "同步数据到资源文件";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button14.Location = new System.Drawing.Point(195, 206);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 17;
+            this.button14.Text = "添加资源";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(78, 208);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(104, 21);
+            this.textBox16.TabIndex = 16;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(15, 213);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 15;
+            this.label31.Text = "电影名称：";
             // 
             // textBox17
             // 
@@ -960,6 +993,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(148, 20);
             this.comboBox2.TabIndex = 6;
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             // 
             // label29
             // 
@@ -1095,7 +1129,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(71, 25);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 20);
+            this.comboBox1.Size = new System.Drawing.Size(136, 20);
             this.comboBox1.TabIndex = 1;
             // 
             // label27
@@ -1144,58 +1178,16 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "选择初始资源文件：";
             // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(195, 206);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 17;
-            this.button14.Text = "添加资源";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(78, 208);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(104, 21);
-            this.textBox16.TabIndex = 16;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(15, 213);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(65, 12);
-            this.label31.TabIndex = 15;
-            this.label31.Text = "电影名称：";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(247, 29);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
-            this.textBox18.Size = new System.Drawing.Size(89, 21);
-            this.textBox18.TabIndex = 14;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(251, 11);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(77, 12);
-            this.label34.TabIndex = 15;
-            this.label34.Text = "默认文件名：";
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 530);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
+            this.MaximumSize = new System.Drawing.Size(378, 569);
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "电影信封文件生成器";
+            this.Text = "电影信封-文件生成器";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1335,7 +1327,6 @@
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox18;
     }
 }
 

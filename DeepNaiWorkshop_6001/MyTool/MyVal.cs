@@ -128,6 +128,25 @@ namespace DeepNaiWorkshop_6001.MyTool
         {
             return JsonConvert.DeserializeObject<SystemConfigJson>(MyVal.DecodeForSysconfig(content));
         }
+        /// <summary>
+        /// 单行数据加密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string DecodeLineForResourceFile(string str)
+        {
+            return RsaDecrypt(str, SystemConfig.rsaPrivateKey);
+        }
+
+        /// <summary>
+        /// base64
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string DecodeForResourceFile(string str)
+        {
+            return Base64Decode(Encoding.UTF8, str);
+        }
 
     }
 }

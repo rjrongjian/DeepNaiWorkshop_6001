@@ -93,5 +93,10 @@ namespace DeepNaiWorkshop_6001.MyTool
                 return false;
             }
         }
+
+        public static string getCurrentDate()
+        {
+           return DateTime.Now.ToString();
+        }
     }
 }
