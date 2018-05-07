@@ -124,6 +124,9 @@ namespace FileCreator
             this.comboBox2.ValueMember = "index";
             this.comboBox2.DisplayMember = "moduleName";
 
+
+            list = new List<ResourceInfoForCombox>();
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -384,8 +387,6 @@ namespace FileCreator
             List<ResourceModule> resourceModuleList = resourceMoviesJson.resourceList;
             resourceModuleList.Add( new ResourceModule { name = this.textBox15.Text , movieList = new List<ResourceMovie>()});
 
-            list = new List<ResourceInfoForCombox>();
-
             //给两个combox添加一个
 
             list.Add(new ResourceInfoForCombox { index = resourceModuleList.Count-1, moduleName = this.textBox15.Text });
@@ -453,10 +454,10 @@ namespace FileCreator
             //
             ResourceMovie resourceMovie = new ResourceMovie();
             resourceMovie.memberLevel = radioButton10.Checked?1:0;
-            resourceMovie.name = SystemConfigApp.EncodeLineForResourceFile(textBox16.Text);
+            resourceMovie.name = textBox16.Text;
             resourceMovie.playType = radioButton12.Checked?2:1; // 播放器类型 1 vlc 2 web
             resourceMovie.updateTime = MyDateUtil.getCurrentDate();
-            resourceMovie.url = textBox17.Text;
+            resourceMovie.url = SystemConfigApp.EncodeLineForResourceFile(textBox17.Text);
             resourceModule.movieList.Add(resourceMovie);
 
             
