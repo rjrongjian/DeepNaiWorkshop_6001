@@ -18,7 +18,7 @@ namespace DeepNaiWorkshop_6001.Service
             try
             {
                 string content = HttpCodeUtil.GetRequest(SystemConfig.systemConfigUrl, null);
-                content = MyVal.Base64Decode(content);
+                content = MyVal.DecodeForSysconfig(content);
                 systemConfigJson = JsonConvert.DeserializeObject<SystemConfigJson>(content);
             }
             catch(Exception e)

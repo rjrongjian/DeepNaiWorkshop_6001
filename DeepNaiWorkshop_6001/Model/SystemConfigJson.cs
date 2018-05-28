@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeepNaiWorkshop_6001.Model
 {
-    class SystemConfigJson
+    public class SystemConfigJson
     {
         public string notify1;//通知1
         public string notify2;//通知2
@@ -17,8 +17,9 @@ namespace DeepNaiWorkshop_6001.Model
         public string serverTimeFromUrlResponseHeaderDate;//通过一个信任的网站的响应头获取日期
         public int isUseOtherServerTime;//1 是 0否 是否使用其他服务器时间作为系统时间
         public int isSendStatisticMail;//是否发送统计邮件 1是 0否
+        public int isMustUpgrade;//是否强制升级 1是 0否
 
 
-        
+
     }
 }

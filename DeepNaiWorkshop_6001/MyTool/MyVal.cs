@@ -1,43 +1,17 @@
-﻿using System;
+﻿using DeepNaiWorkshop_6001.Model;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DeepNaiWorkshop_6001.MyTool
 {
-    class MyVal
+    public class MyVal
     {
-        /// <summary>
-        /// Base64加密，采用utf8编码方式加密
-        /// </summary>
-        /// <param name="source">待加密的明文</param>
-        /// <returns>加密后的字符串</returns>
-        public static string Base64Encode(string source)
-        {
-            return Base64Encode(Encoding.UTF8, source);
-        }
-
-        /// <summary>
-        /// Base64加密
-        /// </summary>
-        /// <param name="encodeType">加密采用的编码方式</param>
-        /// <param name="source">待加密的明文</param>
-        /// <returns></returns>
-        public static string Base64Encode(Encoding encodeType, string source)
-        {
-            string encode = string.Empty;
-            byte[] bytes = encodeType.GetBytes(source);
-            try
-            {
-                encode = Convert.ToBase64String(bytes);
-            }
-            catch
-            {
-                encode = source;
-            }
-            return encode;
-        }
+       
 
         /// <summary>
         /// Base64解密，采用utf8编码方式解密
@@ -70,31 +44,7 @@ namespace DeepNaiWorkshop_6001.MyTool
             return decode;
         }
 
-        /// <summary>
-        /// 会员文件加密方式
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        public static string EncodeForMemberFile(string str)
-        {
-            byte[] bs = Encoding.UTF8.GetBytes(str);
-            byte[] bs2 = new byte[bs.Length];
-            //倒叙
-            for(int i = bs.Length - 1; i >= 0; i--)
-            {
-                bs2[bs2.Length] = bs[i];
-            }
-            if (bs2.Length >= 3)
-            {
-                byte t = bs2[0];
-                bs2[0] = bs[2];
-                bs2[2] = t;
-            }
-
-            //压缩bcd，然后在base64
-
-            return MyVal.Base64Encode(System.Text.Encoding.UTF8.GetString(bs2));
-        }
+       
         /// <summary>
         /// 会员文件解密方式
         /// </summary>
@@ -113,10 +63,62 @@ namespace DeepNaiWorkshop_6001.MyTool
             byte[] bs2 = new byte[bs.Length];
             for(int i = bs.Length - 1; i >= 0; i--)
             {
-                bs2[bs2.Length] = bs[i];
+                bs2[bs2.Length - i - 1] = bs[i];
             }
 
             return Encoding.UTF8.GetString(bs2);
         }
+
+       
+        /// <summary>
+        /// 系统文件解密方式
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string DecodeForSysconfig(string str)
+        {
+            return RsaDecrypt(str, SystemConfig.rsaPrivateKey);
+        }
+
+
+        public static string RsaDecrypt(string encryptedInput, string privateKey)
+        {
+            if (string.IsNullOrEmpty(encryptedInput))
+            {
+                return string.Empty;
+            }
+
+            if (string.IsNullOrWhiteSpace(privateKey))
+            {
+                throw new ArgumentException("Invalid Private Key");
+            }
+
+            using (var rsaProvider = new RSACryptoServiceProvider())
+            {
+                var inputBytes = Convert.FromBase64String(encryptedInput);
+                rsaProvider.FromXmlString(privateKey);
+                int bufferSize = rsaProvider.KeySize / 8;
+                var buffer = new byte[bufferSize];
+                using (MemoryStream inputStream = new MemoryStream(inputBytes),
+                     outputStream = new MemoryStream())
+                {
+                    while (true)
+                    {
+                        int readSize = inputStream.Read(buffer, 0, bufferSize);
+                        if (readSize <= 0)
+                        {
+                            break;
+                        }
+
+                        var temp = new byte[readSize];
+                        Array.Copy(buffer, 0, temp, 0, readSize);
+                        var rawBytes = rsaProvider.Decrypt(temp, false);
+                        outputStream.Write(rawBytes, 0, rawBytes.Length);
+                    }
+                    return Encoding.UTF8.GetString(outputStream.ToArray());
+                }
+            }
+        }
+
     }
 }

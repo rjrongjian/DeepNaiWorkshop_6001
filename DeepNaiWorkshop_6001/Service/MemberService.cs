@@ -56,7 +56,7 @@ namespace DeepNaiWorkshop_6001.Service
                         }
                         else
                         {
-                            long currentServerTime = MySystemUtil.GetServerTime(systemConfigJson.isUseOtherServerTime,systemConfigJson.ServerTimeFromUrlResponseHeaderDate);
+                            long currentServerTime = MySystemUtil.GetServerTime(systemConfigJson.isUseOtherServerTime,systemConfigJson.serverTimeFromUrlResponseHeaderDate);
                             if(currentServerTime> member.MemberJson.ExpireTime)
                             {
                                 return false;
