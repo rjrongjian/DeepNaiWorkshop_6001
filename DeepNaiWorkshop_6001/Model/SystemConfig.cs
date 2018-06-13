@@ -16,8 +16,8 @@ namespace DeepNaiWorkshop_6001.Model
         
         public static int version = 10;//当前版本号 举例 10->1.0
         public static String memberFile = "member.dyxf";//本地会员文件存在的地方
-        //public static String webRoot = "http://www.52bang.site/dyxf";//可访问的nginx根目录
-        public static String webRoot = "http://192.168.0.15:9527/dyxf";
+        public static String webRoot = "http://www.52bang.site/dyxf";//可访问的nginx根目录
+        //public static String webRoot = "http://192.168.0.15:9527/dyxf";
         public static string memberCodeDir = webRoot + "/member/";
         public static string memberCodeFileSuffix = ".dyxf";
 

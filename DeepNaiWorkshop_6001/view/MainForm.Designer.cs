@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            CCWin.SkinControl.Animation animation3 = new CCWin.SkinControl.Animation();
+            CCWin.SkinControl.Animation animation1 = new CCWin.SkinControl.Animation();
             this.mediaPanel = new CCWin.SkinControl.SkinPushPanel();
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.moviePanel = new System.Windows.Forms.Panel();
             this.skinPushPanel1 = new CCWin.SkinControl.SkinPushPanel();
             this.pushPanelItem1 = new CCWin.SkinControl.PushPanelItem();
-            this.memberControl = new DeepNaiWorkshop_6001.View.MemberControl();
+            this.memberControl = new DeepNaiWorkshop_6001.View.MemberControl2();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mediaPanel)).BeginInit();
             this.skinPanel1.SuspendLayout();
@@ -58,13 +58,14 @@
             this.mediaPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mediaPanel.BackgroundImage")));
             this.mediaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.animator.SetDecoration(this.mediaPanel, CCWin.SkinControl.DecorationType.None);
+            this.mediaPanel.ImageStyle = CCWin.SkinControl.CaptionImageStyle.None;
             this.mediaPanel.Location = new System.Drawing.Point(4, 34);
             this.mediaPanel.Margin = new System.Windows.Forms.Padding(0);
             this.mediaPanel.Name = "mediaPanel";
-            this.mediaPanel.Radius = 2;
             this.mediaPanel.RoundStyle = CCWin.SkinClass.RoundStyle.None;
             this.mediaPanel.Size = new System.Drawing.Size(792, 501);
             this.mediaPanel.TabIndex = 1;
+            this.mediaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mediaPanel_Paint);
             // 
             // skinPanel1
             // 
@@ -150,22 +151,22 @@
             // 
             this.animator.AnimationType = CCWin.SkinControl.AnimationType.Transparent;
             this.animator.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 1F;
-            this.animator.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.animator.DefaultAnimation = animation1;
             // 
             // moviePanel
             // 
@@ -208,6 +209,7 @@
             // memberControl
             // 
             this.memberControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.memberControl.BackColor = System.Drawing.Color.Black;
             this.animator.SetDecoration(this.memberControl, CCWin.SkinControl.DecorationType.None);
             this.memberControl.Location = new System.Drawing.Point(5, 240);
             this.memberControl.Margin = new System.Windows.Forms.Padding(0);
@@ -219,7 +221,6 @@
             // timer1
             // 
             this.timer1.Interval = 20000;
-            this.timer1.Enabled = false;
             this.timer1.Tick += new System.EventHandler(this.RecordMemberTime);
             // 
             // MainForm
@@ -260,8 +261,6 @@
         }
 
         #endregion
-
-        private CCWin.SkinControl.SkinPushPanel mediaPanel;
         private CCWin.SkinControl.SkinPanel skinPanel1;
         private CCWin.SkinControl.SkinAnimator animator;
         private System.Windows.Forms.Panel moviePanel;
@@ -270,7 +269,9 @@
         private CCWin.SkinControl.PushPanelItem pushPanelItem1;
         private CCWin.SkinControl.SkinButton skinButton3;
         private System.Windows.Forms.Label label4;
-        private View.MemberControl memberControl;
+        private View.MemberControl2 memberControl;
         private System.Windows.Forms.Timer timer1;
+        private CCWin.SkinControl.SkinPushPanel mediaPanel;
+        //private CCWin.SkinControl.SkinPanel mediaPanel;
     }
 }

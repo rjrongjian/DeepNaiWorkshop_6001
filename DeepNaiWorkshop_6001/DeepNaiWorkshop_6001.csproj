@@ -116,6 +116,7 @@
     <Compile Include="MyTool\MyFileLog.cs" />
     <Compile Include="MyTool\MyFileUtil.cs" />
     <Compile Include="MyTool\MyIniHelper.cs" />
+    <Compile Include="MyTool\MyIpUtil.cs" />
     <Compile Include="MyTool\MyMemoryUtil.cs" />
     <Compile Include="MyTool\MySystemUtil.cs" />
     <Compile Include="MyTool\MyVal.cs" />
@@ -153,6 +154,12 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MemberControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MemberControl2.Designer.cs">
+      <DependentUpon>MemberControl2.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MemberControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MemberControl2.resx">
+      <DependentUpon>MemberControl2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MemberControl.resx">
       <DependentUpon>MemberControl.cs</DependentUpon>

@@ -41,13 +41,27 @@ namespace DeepNaiWorkshop_6001
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Directory.SetCurrentDirectory(Application.StartupPath);
             mainFormController = new MainFormController();
             mainFormController.Start();
+            
+            //Console.WriteLine(MyIpUtil.GetExtenalIpAddress_0());
+            /*
+            Console.WriteLine(MyIpUtil.GetExtenalIpAddress());
+            Console.WriteLine(MyIpUtil.getExternalIp());
+            Console.WriteLine(MyIpUtil.GetLocalIpAddress());
 
-            //Application.Run();
+            int[] x = new int[]{1,2,3,4,5,5 };
+            var query = from x1 in x where x1 > 3 select x1;
+            query.ToList().ForEach(delegate(int val) {
+                Console.WriteLine("aa:"+val);
+            });
+            //Console.WriteLine(query);
+            */
+            Application.Run();
         }
     }
 }

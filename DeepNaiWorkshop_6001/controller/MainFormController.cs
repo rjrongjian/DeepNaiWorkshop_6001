@@ -47,21 +47,21 @@ namespace DeepNaiWorkshop_6001.controller
             initForm.InitAnimator();
 
             //加载系统信息
-            systemService = new SystemService();
-            systemService.Reload();
+            //systemService = new SystemService();
+            //systemService.Reload();
 
 
             //加载会员信息
-            memberService = new MemberService();
-            memberService.ReLoad();//会员数据
+            //memberService = new MemberService();
+            //memberService.ReLoad();//会员数据
 
             //获取影视列表
-            movieService = new MovieService();
-            movieService.Reload();//加载影视资源数据
+            //movieService = new MovieService();
+            //movieService.Reload();//加载影视资源数据
 
             //加载公告信息
-            notifyService = new NotifyService();
-            notifyService.Reload();
+            //notifyService = new NotifyService();
+            //notifyService.Reload();
 
             //初始化播放器
             playerService = new PlayerService();
@@ -89,6 +89,7 @@ namespace DeepNaiWorkshop_6001.controller
             
 
             //判断校验会员是否可用
+            /*
             if (!memberService.CanUseMember(systemService.getCurrentSystemConfigJson(),memberService.GetCurrentLoadMember()))
             {
                 //TODO
@@ -99,7 +100,7 @@ namespace DeepNaiWorkshop_6001.controller
                 //开启定时器，记录临时会员时间
                 mainForm.StartRecordMemberTime();
             }
-
+            */
 
 
 

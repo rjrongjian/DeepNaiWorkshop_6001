@@ -175,7 +175,7 @@ namespace DeepNaiWorkshop_6001.view
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //目前关闭主窗体退出应用
-            //MySystemUtil.Exit("关闭主窗体退出应用...");
+            MySystemUtil.Exit("关闭主窗体退出应用...");
         }
 
         private void MainForm_Shown(object sender, EventArgs e)//当窗体首次被展示之前，关闭初始化窗口，退出应用
@@ -183,7 +183,13 @@ namespace DeepNaiWorkshop_6001.view
             SystemConfig.isFirstShownForMainForm = true;
         }
 
-
-        
+        private void mediaPanel_Paint(object sender, PaintEventArgs e)
+        {
+            //使用红色虚线绘制边框  
+            Pen pen1 = new Pen(Color.Red, 1);
+            pen1.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            pen1.DashPattern = new float[] { 4f, 2f };
+            e.Graphics.DrawRectangle(pen1, 0, 0, this.mediaPanel.Width , this.mediaPanel.Height );
+        }
     }
 }
