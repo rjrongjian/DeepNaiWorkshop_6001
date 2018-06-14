@@ -37,12 +37,12 @@
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.loginPageRememberMe = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.skinTextBox1 = new CCWin.SkinControl.SkinTextBox();
+            this.loginPagePassword = new CCWin.SkinControl.SkinTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loginButton = new CCWin.SkinControl.SkinButton();
-            this.memberCodeText = new CCWin.SkinControl.SkinTextBox();
+            this.loginPageUserName = new CCWin.SkinControl.SkinTextBox();
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,6 +61,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
             this.skinTextBox7 = new CCWin.SkinControl.SkinTextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.accountPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.skinTabControl1.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             this.accountPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.accountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(58)))), ((int)(((byte)(65)))));
+            this.accountPanel.Controls.Add(this.linkLabel1);
             this.accountPanel.Controls.Add(this.groupBox2);
             this.accountPanel.Location = new System.Drawing.Point(0, 0);
             this.accountPanel.Name = "accountPanel";
@@ -138,27 +140,27 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.loginPageRememberMe);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.skinTextBox1);
+            this.groupBox1.Controls.Add(this.loginPagePassword);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.loginButton);
-            this.groupBox1.Controls.Add(this.memberCodeText);
+            this.groupBox1.Controls.Add(this.loginPageUserName);
             this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(275, 180);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // checkBox1
+            // loginPageRememberMe
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(65, 136);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(68, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "记住我";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.loginPageRememberMe.AutoSize = true;
+            this.loginPageRememberMe.Location = new System.Drawing.Point(65, 136);
+            this.loginPageRememberMe.Name = "loginPageRememberMe";
+            this.loginPageRememberMe.Size = new System.Drawing.Size(68, 17);
+            this.loginPageRememberMe.TabIndex = 16;
+            this.loginPageRememberMe.Text = "记住我";
+            this.loginPageRememberMe.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -169,49 +171,49 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "密  码：";
             // 
-            // skinTextBox1
+            // loginPagePassword
             // 
-            this.skinTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox1.DownBack = null;
-            this.skinTextBox1.Icon = null;
-            this.skinTextBox1.IconIsButton = false;
-            this.skinTextBox1.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox1.IsPasswordChat = '\0';
-            this.skinTextBox1.IsSystemPasswordChar = false;
-            this.skinTextBox1.Lines = new string[0];
-            this.skinTextBox1.Location = new System.Drawing.Point(102, 72);
-            this.skinTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox1.MaxLength = 8;
-            this.skinTextBox1.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox1.MouseBack = null;
-            this.skinTextBox1.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox1.Multiline = true;
-            this.skinTextBox1.Name = "skinTextBox1";
-            this.skinTextBox1.NormlBack = null;
-            this.skinTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox1.ReadOnly = false;
-            this.skinTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox1.Size = new System.Drawing.Size(141, 29);
+            this.loginPagePassword.BackColor = System.Drawing.Color.Transparent;
+            this.loginPagePassword.DownBack = null;
+            this.loginPagePassword.Icon = null;
+            this.loginPagePassword.IconIsButton = false;
+            this.loginPagePassword.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.loginPagePassword.IsPasswordChat = '\0';
+            this.loginPagePassword.IsSystemPasswordChar = false;
+            this.loginPagePassword.Lines = new string[0];
+            this.loginPagePassword.Location = new System.Drawing.Point(102, 72);
+            this.loginPagePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.loginPagePassword.MaxLength = 8;
+            this.loginPagePassword.MinimumSize = new System.Drawing.Size(28, 28);
+            this.loginPagePassword.MouseBack = null;
+            this.loginPagePassword.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.loginPagePassword.Multiline = true;
+            this.loginPagePassword.Name = "loginPagePassword";
+            this.loginPagePassword.NormlBack = null;
+            this.loginPagePassword.Padding = new System.Windows.Forms.Padding(5);
+            this.loginPagePassword.ReadOnly = false;
+            this.loginPagePassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.loginPagePassword.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox1.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox1.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox1.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox1.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox1.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox1.SkinTxt.MaxLength = 8;
-            this.skinTextBox1.SkinTxt.Multiline = true;
-            this.skinTextBox1.SkinTxt.Name = "BaseText";
-            this.skinTextBox1.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox1.SkinTxt.TabIndex = 0;
-            this.skinTextBox1.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox1.SkinTxt.WaterText = "";
-            this.skinTextBox1.TabIndex = 14;
-            this.skinTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox1.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox1.WaterText = "";
-            this.skinTextBox1.WordWrap = true;
+            this.loginPagePassword.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.loginPagePassword.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginPagePassword.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.loginPagePassword.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.loginPagePassword.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.loginPagePassword.SkinTxt.MaxLength = 8;
+            this.loginPagePassword.SkinTxt.Multiline = true;
+            this.loginPagePassword.SkinTxt.Name = "BaseText";
+            this.loginPagePassword.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.loginPagePassword.SkinTxt.TabIndex = 0;
+            this.loginPagePassword.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.loginPagePassword.SkinTxt.WaterText = "";
+            this.loginPagePassword.TabIndex = 14;
+            this.loginPagePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.loginPagePassword.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.loginPagePassword.WaterText = "";
+            this.loginPagePassword.WordWrap = true;
             // 
             // label1
             // 
@@ -244,50 +246,51 @@
             this.loginButton.TabIndex = 12;
             this.loginButton.Text = "登录";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // memberCodeText
+            // loginPageUserName
             // 
-            this.memberCodeText.BackColor = System.Drawing.Color.Transparent;
-            this.memberCodeText.DownBack = null;
-            this.memberCodeText.Icon = null;
-            this.memberCodeText.IconIsButton = false;
-            this.memberCodeText.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.memberCodeText.IsPasswordChat = '\0';
-            this.memberCodeText.IsSystemPasswordChar = false;
-            this.memberCodeText.Lines = new string[0];
-            this.memberCodeText.Location = new System.Drawing.Point(102, 26);
-            this.memberCodeText.Margin = new System.Windows.Forms.Padding(0);
-            this.memberCodeText.MaxLength = 8;
-            this.memberCodeText.MinimumSize = new System.Drawing.Size(28, 28);
-            this.memberCodeText.MouseBack = null;
-            this.memberCodeText.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.memberCodeText.Multiline = true;
-            this.memberCodeText.Name = "memberCodeText";
-            this.memberCodeText.NormlBack = null;
-            this.memberCodeText.Padding = new System.Windows.Forms.Padding(5);
-            this.memberCodeText.ReadOnly = false;
-            this.memberCodeText.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.memberCodeText.Size = new System.Drawing.Size(141, 29);
+            this.loginPageUserName.BackColor = System.Drawing.Color.Transparent;
+            this.loginPageUserName.DownBack = null;
+            this.loginPageUserName.Icon = null;
+            this.loginPageUserName.IconIsButton = false;
+            this.loginPageUserName.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.loginPageUserName.IsPasswordChat = '\0';
+            this.loginPageUserName.IsSystemPasswordChar = false;
+            this.loginPageUserName.Lines = new string[0];
+            this.loginPageUserName.Location = new System.Drawing.Point(102, 26);
+            this.loginPageUserName.Margin = new System.Windows.Forms.Padding(0);
+            this.loginPageUserName.MaxLength = 8;
+            this.loginPageUserName.MinimumSize = new System.Drawing.Size(28, 28);
+            this.loginPageUserName.MouseBack = null;
+            this.loginPageUserName.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.loginPageUserName.Multiline = true;
+            this.loginPageUserName.Name = "loginPageUserName";
+            this.loginPageUserName.NormlBack = null;
+            this.loginPageUserName.Padding = new System.Windows.Forms.Padding(5);
+            this.loginPageUserName.ReadOnly = false;
+            this.loginPageUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.loginPageUserName.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.memberCodeText.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.memberCodeText.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberCodeText.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.memberCodeText.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.memberCodeText.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.memberCodeText.SkinTxt.MaxLength = 8;
-            this.memberCodeText.SkinTxt.Multiline = true;
-            this.memberCodeText.SkinTxt.Name = "BaseText";
-            this.memberCodeText.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.memberCodeText.SkinTxt.TabIndex = 0;
-            this.memberCodeText.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.memberCodeText.SkinTxt.WaterText = "";
-            this.memberCodeText.TabIndex = 11;
-            this.memberCodeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.memberCodeText.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.memberCodeText.WaterText = "";
-            this.memberCodeText.WordWrap = true;
+            this.loginPageUserName.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.loginPageUserName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginPageUserName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.loginPageUserName.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.loginPageUserName.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.loginPageUserName.SkinTxt.MaxLength = 8;
+            this.loginPageUserName.SkinTxt.Multiline = true;
+            this.loginPageUserName.SkinTxt.Name = "BaseText";
+            this.loginPageUserName.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.loginPageUserName.SkinTxt.TabIndex = 0;
+            this.loginPageUserName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.loginPageUserName.SkinTxt.WaterText = "";
+            this.loginPageUserName.TabIndex = 11;
+            this.loginPageUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.loginPageUserName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.loginPageUserName.WaterText = "";
+            this.loginPageUserName.WordWrap = true;
             // 
             // skinTabPage2
             // 
@@ -709,6 +712,18 @@
             this.skinTextBox7.WaterText = "";
             this.skinTextBox7.WordWrap = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.LightSteelBlue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.IndianRed;
+            this.linkLabel1.Location = new System.Drawing.Point(19, 272);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(221, 12);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "做任务领取充值卡？点我了解一下！！！";
+            // 
             // MemberControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -718,6 +733,7 @@
             this.Name = "MemberControl2";
             this.Size = new System.Drawing.Size(317, 293);
             this.accountPanel.ResumeLayout(false);
+            this.accountPanel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.skinTabControl1.ResumeLayout(false);
             this.skinTabPage1.ResumeLayout(false);
@@ -742,12 +758,12 @@
         private CCWin.SkinControl.SkinTabPage skinTabPage2;
         private CCWin.SkinControl.SkinTabPage skinTabPage3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox loginPageRememberMe;
         private System.Windows.Forms.Label label2;
-        private CCWin.SkinControl.SkinTextBox skinTextBox1;
+        private CCWin.SkinControl.SkinTextBox loginPagePassword;
         private System.Windows.Forms.Label label1;
         private CCWin.SkinControl.SkinButton loginButton;
-        private CCWin.SkinControl.SkinTextBox memberCodeText;
+        private CCWin.SkinControl.SkinTextBox loginPageUserName;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         private CCWin.SkinControl.SkinTextBox skinTextBox4;
@@ -764,5 +780,6 @@
         private System.Windows.Forms.Label label8;
         private CCWin.SkinControl.SkinButton skinButton2;
         private CCWin.SkinControl.SkinTextBox skinTextBox7;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

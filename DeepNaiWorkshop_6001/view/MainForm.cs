@@ -95,6 +95,20 @@ namespace DeepNaiWorkshop_6001.view
             animator.WaitAllAnimations();
         }
 
+        internal void DisplayMemberInfo()
+        {
+            //隐藏memberControl组件
+            if (memberControl.Visible)
+            {
+                animator.Hide(memberControl);
+            }
+            //等到所有的动画将完成
+            animator.WaitAllAnimations();
+
+            String info = "当前登录的用户："+CacheData.UserName+",到期时间："+CacheData.ExpireDate;
+            this.Text = info;
+        }
+
         internal void StartRecordMemberTime()
         {
             this.timer1.Enabled = true;
