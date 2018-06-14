@@ -33,6 +33,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberControl2));
             this.accountPanel = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
@@ -46,22 +47,23 @@
             this.skinTabPage2 = new CCWin.SkinControl.SkinTabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.skinTextBox4 = new CCWin.SkinControl.SkinTextBox();
+            this.registPageEmail = new CCWin.SkinControl.SkinTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.skinTextBox2 = new CCWin.SkinControl.SkinTextBox();
+            this.registPagePassword = new CCWin.SkinControl.SkinTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
-            this.skinTextBox3 = new CCWin.SkinControl.SkinTextBox();
+            this.registPageUserName = new CCWin.SkinControl.SkinTextBox();
             this.skinTabPage3 = new CCWin.SkinControl.SkinTabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.skinTextBox5 = new CCWin.SkinControl.SkinTextBox();
+            this.rechargePageRec = new CCWin.SkinControl.SkinTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.skinTextBox6 = new CCWin.SkinControl.SkinTextBox();
+            this.rechargePageCard = new CCWin.SkinControl.SkinTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
-            this.skinTextBox7 = new CCWin.SkinControl.SkinTextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.rechargePageUserName = new CCWin.SkinControl.SkinTextBox();
+            this.registerTip = new System.Windows.Forms.Label();
+            this.rechargeTip = new System.Windows.Forms.Label();
             this.accountPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.skinTabControl1.SuspendLayout();
@@ -83,6 +85,19 @@
             this.accountPanel.Name = "accountPanel";
             this.accountPanel.Size = new System.Drawing.Size(317, 293);
             this.accountPanel.TabIndex = 1;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.LightSteelBlue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.IndianRed;
+            this.linkLabel1.Location = new System.Drawing.Point(19, 272);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(221, 12);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "做任务领取充值卡？点我了解一下！！！";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // groupBox2
             // 
@@ -116,7 +131,7 @@
             this.skinTabControl1.PageDown = null;
             this.skinTabControl1.PageDownTxtColor = System.Drawing.Color.WhiteSmoke;
             this.skinTabControl1.PageHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl1.PageHover")));
-            this.skinTabControl1.PageHoverTxtColor = System.Drawing.Color.IndianRed;
+            this.skinTabControl1.PageHoverTxtColor = System.Drawing.Color.Maroon;
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.skinTabControl1.PageNorml = null;
             this.skinTabControl1.PageNormlTxtColor = System.Drawing.Color.IndianRed;
@@ -178,12 +193,12 @@
             this.loginPagePassword.Icon = null;
             this.loginPagePassword.IconIsButton = false;
             this.loginPagePassword.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.loginPagePassword.IsPasswordChat = '\0';
+            this.loginPagePassword.IsPasswordChat = '*';
             this.loginPagePassword.IsSystemPasswordChar = false;
             this.loginPagePassword.Lines = new string[0];
             this.loginPagePassword.Location = new System.Drawing.Point(102, 72);
             this.loginPagePassword.Margin = new System.Windows.Forms.Padding(0);
-            this.loginPagePassword.MaxLength = 8;
+            this.loginPagePassword.MaxLength = 20;
             this.loginPagePassword.MinimumSize = new System.Drawing.Size(28, 28);
             this.loginPagePassword.MouseBack = null;
             this.loginPagePassword.MouseState = CCWin.SkinClass.ControlState.Normal;
@@ -202,9 +217,10 @@
             this.loginPagePassword.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.loginPagePassword.SkinTxt.ForeColor = System.Drawing.Color.Gray;
             this.loginPagePassword.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.loginPagePassword.SkinTxt.MaxLength = 8;
+            this.loginPagePassword.SkinTxt.MaxLength = 20;
             this.loginPagePassword.SkinTxt.Multiline = true;
             this.loginPagePassword.SkinTxt.Name = "BaseText";
+            this.loginPagePassword.SkinTxt.PasswordChar = '*';
             this.loginPagePassword.SkinTxt.Size = new System.Drawing.Size(131, 19);
             this.loginPagePassword.SkinTxt.TabIndex = 0;
             this.loginPagePassword.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
@@ -260,7 +276,7 @@
             this.loginPageUserName.Lines = new string[0];
             this.loginPageUserName.Location = new System.Drawing.Point(102, 26);
             this.loginPageUserName.Margin = new System.Windows.Forms.Padding(0);
-            this.loginPageUserName.MaxLength = 8;
+            this.loginPageUserName.MaxLength = 20;
             this.loginPageUserName.MinimumSize = new System.Drawing.Size(28, 28);
             this.loginPageUserName.MouseBack = null;
             this.loginPageUserName.MouseState = CCWin.SkinClass.ControlState.Normal;
@@ -279,7 +295,7 @@
             this.loginPageUserName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.loginPageUserName.SkinTxt.ForeColor = System.Drawing.Color.Gray;
             this.loginPageUserName.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.loginPageUserName.SkinTxt.MaxLength = 8;
+            this.loginPageUserName.SkinTxt.MaxLength = 20;
             this.loginPageUserName.SkinTxt.Multiline = true;
             this.loginPageUserName.SkinTxt.Name = "BaseText";
             this.loginPageUserName.SkinTxt.Size = new System.Drawing.Size(131, 19);
@@ -307,13 +323,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.registerTip);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.skinTextBox4);
+            this.groupBox3.Controls.Add(this.registPageEmail);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.skinTextBox2);
+            this.groupBox3.Controls.Add(this.registPagePassword);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.skinButton1);
-            this.groupBox3.Controls.Add(this.skinTextBox3);
+            this.groupBox3.Controls.Add(this.registPageUserName);
             this.groupBox3.Location = new System.Drawing.Point(3, 0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(275, 183);
@@ -329,49 +346,49 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "邮箱地址：";
             // 
-            // skinTextBox4
+            // registPageEmail
             // 
-            this.skinTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox4.DownBack = null;
-            this.skinTextBox4.Icon = null;
-            this.skinTextBox4.IconIsButton = false;
-            this.skinTextBox4.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox4.IsPasswordChat = '\0';
-            this.skinTextBox4.IsSystemPasswordChar = false;
-            this.skinTextBox4.Lines = new string[0];
-            this.skinTextBox4.Location = new System.Drawing.Point(102, 107);
-            this.skinTextBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox4.MaxLength = 8;
-            this.skinTextBox4.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox4.MouseBack = null;
-            this.skinTextBox4.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox4.Multiline = true;
-            this.skinTextBox4.Name = "skinTextBox4";
-            this.skinTextBox4.NormlBack = null;
-            this.skinTextBox4.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox4.ReadOnly = false;
-            this.skinTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox4.Size = new System.Drawing.Size(141, 29);
+            this.registPageEmail.BackColor = System.Drawing.Color.Transparent;
+            this.registPageEmail.DownBack = null;
+            this.registPageEmail.Icon = null;
+            this.registPageEmail.IconIsButton = false;
+            this.registPageEmail.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.registPageEmail.IsPasswordChat = '\0';
+            this.registPageEmail.IsSystemPasswordChar = false;
+            this.registPageEmail.Lines = new string[0];
+            this.registPageEmail.Location = new System.Drawing.Point(102, 107);
+            this.registPageEmail.Margin = new System.Windows.Forms.Padding(0);
+            this.registPageEmail.MaxLength = 40;
+            this.registPageEmail.MinimumSize = new System.Drawing.Size(28, 28);
+            this.registPageEmail.MouseBack = null;
+            this.registPageEmail.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.registPageEmail.Multiline = true;
+            this.registPageEmail.Name = "registPageEmail";
+            this.registPageEmail.NormlBack = null;
+            this.registPageEmail.Padding = new System.Windows.Forms.Padding(5);
+            this.registPageEmail.ReadOnly = false;
+            this.registPageEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.registPageEmail.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox4.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox4.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox4.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox4.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox4.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox4.SkinTxt.MaxLength = 8;
-            this.skinTextBox4.SkinTxt.Multiline = true;
-            this.skinTextBox4.SkinTxt.Name = "BaseText";
-            this.skinTextBox4.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox4.SkinTxt.TabIndex = 0;
-            this.skinTextBox4.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox4.SkinTxt.WaterText = "";
-            this.skinTextBox4.TabIndex = 16;
-            this.skinTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox4.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox4.WaterText = "";
-            this.skinTextBox4.WordWrap = true;
+            this.registPageEmail.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.registPageEmail.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registPageEmail.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.registPageEmail.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.registPageEmail.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.registPageEmail.SkinTxt.MaxLength = 40;
+            this.registPageEmail.SkinTxt.Multiline = true;
+            this.registPageEmail.SkinTxt.Name = "BaseText";
+            this.registPageEmail.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.registPageEmail.SkinTxt.TabIndex = 0;
+            this.registPageEmail.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.registPageEmail.SkinTxt.WaterText = "";
+            this.registPageEmail.TabIndex = 16;
+            this.registPageEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.registPageEmail.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.registPageEmail.WaterText = "";
+            this.registPageEmail.WordWrap = true;
             // 
             // label3
             // 
@@ -382,49 +399,50 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "密  码：";
             // 
-            // skinTextBox2
+            // registPagePassword
             // 
-            this.skinTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox2.DownBack = null;
-            this.skinTextBox2.Icon = null;
-            this.skinTextBox2.IconIsButton = false;
-            this.skinTextBox2.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox2.IsPasswordChat = '\0';
-            this.skinTextBox2.IsSystemPasswordChar = false;
-            this.skinTextBox2.Lines = new string[0];
-            this.skinTextBox2.Location = new System.Drawing.Point(102, 64);
-            this.skinTextBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox2.MaxLength = 8;
-            this.skinTextBox2.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox2.MouseBack = null;
-            this.skinTextBox2.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox2.Multiline = true;
-            this.skinTextBox2.Name = "skinTextBox2";
-            this.skinTextBox2.NormlBack = null;
-            this.skinTextBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox2.ReadOnly = false;
-            this.skinTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox2.Size = new System.Drawing.Size(141, 29);
+            this.registPagePassword.BackColor = System.Drawing.Color.Transparent;
+            this.registPagePassword.DownBack = null;
+            this.registPagePassword.Icon = null;
+            this.registPagePassword.IconIsButton = false;
+            this.registPagePassword.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.registPagePassword.IsPasswordChat = '*';
+            this.registPagePassword.IsSystemPasswordChar = false;
+            this.registPagePassword.Lines = new string[0];
+            this.registPagePassword.Location = new System.Drawing.Point(102, 64);
+            this.registPagePassword.Margin = new System.Windows.Forms.Padding(0);
+            this.registPagePassword.MaxLength = 20;
+            this.registPagePassword.MinimumSize = new System.Drawing.Size(28, 28);
+            this.registPagePassword.MouseBack = null;
+            this.registPagePassword.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.registPagePassword.Multiline = true;
+            this.registPagePassword.Name = "registPagePassword";
+            this.registPagePassword.NormlBack = null;
+            this.registPagePassword.Padding = new System.Windows.Forms.Padding(5);
+            this.registPagePassword.ReadOnly = false;
+            this.registPagePassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.registPagePassword.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox2.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox2.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox2.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox2.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox2.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox2.SkinTxt.MaxLength = 8;
-            this.skinTextBox2.SkinTxt.Multiline = true;
-            this.skinTextBox2.SkinTxt.Name = "BaseText";
-            this.skinTextBox2.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox2.SkinTxt.TabIndex = 0;
-            this.skinTextBox2.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox2.SkinTxt.WaterText = "";
-            this.skinTextBox2.TabIndex = 14;
-            this.skinTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox2.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox2.WaterText = "";
-            this.skinTextBox2.WordWrap = true;
+            this.registPagePassword.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.registPagePassword.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registPagePassword.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.registPagePassword.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.registPagePassword.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.registPagePassword.SkinTxt.MaxLength = 20;
+            this.registPagePassword.SkinTxt.Multiline = true;
+            this.registPagePassword.SkinTxt.Name = "BaseText";
+            this.registPagePassword.SkinTxt.PasswordChar = '*';
+            this.registPagePassword.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.registPagePassword.SkinTxt.TabIndex = 0;
+            this.registPagePassword.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.registPagePassword.SkinTxt.WaterText = "";
+            this.registPagePassword.TabIndex = 14;
+            this.registPagePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.registPagePassword.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.registPagePassword.WaterText = "";
+            this.registPagePassword.WordWrap = true;
             // 
             // label4
             // 
@@ -457,50 +475,51 @@
             this.skinButton1.TabIndex = 12;
             this.skinButton1.Text = "注册";
             this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.Click += new System.EventHandler(this.skinButton1_Click);
             // 
-            // skinTextBox3
+            // registPageUserName
             // 
-            this.skinTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox3.DownBack = null;
-            this.skinTextBox3.Icon = null;
-            this.skinTextBox3.IconIsButton = false;
-            this.skinTextBox3.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox3.IsPasswordChat = '\0';
-            this.skinTextBox3.IsSystemPasswordChar = false;
-            this.skinTextBox3.Lines = new string[0];
-            this.skinTextBox3.Location = new System.Drawing.Point(102, 24);
-            this.skinTextBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox3.MaxLength = 8;
-            this.skinTextBox3.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox3.MouseBack = null;
-            this.skinTextBox3.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox3.Multiline = true;
-            this.skinTextBox3.Name = "skinTextBox3";
-            this.skinTextBox3.NormlBack = null;
-            this.skinTextBox3.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox3.ReadOnly = false;
-            this.skinTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox3.Size = new System.Drawing.Size(141, 29);
+            this.registPageUserName.BackColor = System.Drawing.Color.Transparent;
+            this.registPageUserName.DownBack = null;
+            this.registPageUserName.Icon = null;
+            this.registPageUserName.IconIsButton = false;
+            this.registPageUserName.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.registPageUserName.IsPasswordChat = '\0';
+            this.registPageUserName.IsSystemPasswordChar = false;
+            this.registPageUserName.Lines = new string[0];
+            this.registPageUserName.Location = new System.Drawing.Point(102, 24);
+            this.registPageUserName.Margin = new System.Windows.Forms.Padding(0);
+            this.registPageUserName.MaxLength = 20;
+            this.registPageUserName.MinimumSize = new System.Drawing.Size(28, 28);
+            this.registPageUserName.MouseBack = null;
+            this.registPageUserName.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.registPageUserName.Multiline = true;
+            this.registPageUserName.Name = "registPageUserName";
+            this.registPageUserName.NormlBack = null;
+            this.registPageUserName.Padding = new System.Windows.Forms.Padding(5);
+            this.registPageUserName.ReadOnly = false;
+            this.registPageUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.registPageUserName.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox3.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox3.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox3.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox3.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox3.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox3.SkinTxt.MaxLength = 8;
-            this.skinTextBox3.SkinTxt.Multiline = true;
-            this.skinTextBox3.SkinTxt.Name = "BaseText";
-            this.skinTextBox3.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox3.SkinTxt.TabIndex = 0;
-            this.skinTextBox3.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox3.SkinTxt.WaterText = "";
-            this.skinTextBox3.TabIndex = 11;
-            this.skinTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox3.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox3.WaterText = "";
-            this.skinTextBox3.WordWrap = true;
+            this.registPageUserName.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.registPageUserName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registPageUserName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.registPageUserName.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.registPageUserName.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.registPageUserName.SkinTxt.MaxLength = 20;
+            this.registPageUserName.SkinTxt.Multiline = true;
+            this.registPageUserName.SkinTxt.Name = "BaseText";
+            this.registPageUserName.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.registPageUserName.SkinTxt.TabIndex = 0;
+            this.registPageUserName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.registPageUserName.SkinTxt.WaterText = "";
+            this.registPageUserName.TabIndex = 11;
+            this.registPageUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.registPageUserName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.registPageUserName.WaterText = "";
+            this.registPageUserName.WordWrap = true;
             // 
             // skinTabPage3
             // 
@@ -517,13 +536,14 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.rechargeTip);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.skinTextBox5);
+            this.groupBox4.Controls.Add(this.rechargePageRec);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.skinTextBox6);
+            this.groupBox4.Controls.Add(this.rechargePageCard);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.skinButton2);
-            this.groupBox4.Controls.Add(this.skinTextBox7);
+            this.groupBox4.Controls.Add(this.rechargePageUserName);
             this.groupBox4.Location = new System.Drawing.Point(3, 0);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(275, 183);
@@ -539,49 +559,49 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "推荐人：";
             // 
-            // skinTextBox5
+            // rechargePageRec
             // 
-            this.skinTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox5.DownBack = null;
-            this.skinTextBox5.Icon = null;
-            this.skinTextBox5.IconIsButton = false;
-            this.skinTextBox5.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox5.IsPasswordChat = '\0';
-            this.skinTextBox5.IsSystemPasswordChar = false;
-            this.skinTextBox5.Lines = new string[0];
-            this.skinTextBox5.Location = new System.Drawing.Point(102, 106);
-            this.skinTextBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox5.MaxLength = 8;
-            this.skinTextBox5.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox5.MouseBack = null;
-            this.skinTextBox5.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox5.Multiline = true;
-            this.skinTextBox5.Name = "skinTextBox5";
-            this.skinTextBox5.NormlBack = null;
-            this.skinTextBox5.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox5.ReadOnly = false;
-            this.skinTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox5.Size = new System.Drawing.Size(141, 29);
+            this.rechargePageRec.BackColor = System.Drawing.Color.Transparent;
+            this.rechargePageRec.DownBack = null;
+            this.rechargePageRec.Icon = null;
+            this.rechargePageRec.IconIsButton = false;
+            this.rechargePageRec.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.rechargePageRec.IsPasswordChat = '\0';
+            this.rechargePageRec.IsSystemPasswordChar = false;
+            this.rechargePageRec.Lines = new string[0];
+            this.rechargePageRec.Location = new System.Drawing.Point(102, 106);
+            this.rechargePageRec.Margin = new System.Windows.Forms.Padding(0);
+            this.rechargePageRec.MaxLength = 20;
+            this.rechargePageRec.MinimumSize = new System.Drawing.Size(28, 28);
+            this.rechargePageRec.MouseBack = null;
+            this.rechargePageRec.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.rechargePageRec.Multiline = true;
+            this.rechargePageRec.Name = "rechargePageRec";
+            this.rechargePageRec.NormlBack = null;
+            this.rechargePageRec.Padding = new System.Windows.Forms.Padding(5);
+            this.rechargePageRec.ReadOnly = false;
+            this.rechargePageRec.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.rechargePageRec.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox5.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox5.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox5.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox5.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox5.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox5.SkinTxt.MaxLength = 8;
-            this.skinTextBox5.SkinTxt.Multiline = true;
-            this.skinTextBox5.SkinTxt.Name = "BaseText";
-            this.skinTextBox5.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox5.SkinTxt.TabIndex = 0;
-            this.skinTextBox5.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox5.SkinTxt.WaterText = "";
-            this.skinTextBox5.TabIndex = 16;
-            this.skinTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox5.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox5.WaterText = "";
-            this.skinTextBox5.WordWrap = true;
+            this.rechargePageRec.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rechargePageRec.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rechargePageRec.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.rechargePageRec.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.rechargePageRec.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.rechargePageRec.SkinTxt.MaxLength = 20;
+            this.rechargePageRec.SkinTxt.Multiline = true;
+            this.rechargePageRec.SkinTxt.Name = "BaseText";
+            this.rechargePageRec.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.rechargePageRec.SkinTxt.TabIndex = 0;
+            this.rechargePageRec.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.rechargePageRec.SkinTxt.WaterText = "";
+            this.rechargePageRec.TabIndex = 16;
+            this.rechargePageRec.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rechargePageRec.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.rechargePageRec.WaterText = "";
+            this.rechargePageRec.WordWrap = true;
             // 
             // label7
             // 
@@ -592,49 +612,49 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "充值卡密：";
             // 
-            // skinTextBox6
+            // rechargePageCard
             // 
-            this.skinTextBox6.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox6.DownBack = null;
-            this.skinTextBox6.Icon = null;
-            this.skinTextBox6.IconIsButton = false;
-            this.skinTextBox6.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox6.IsPasswordChat = '\0';
-            this.skinTextBox6.IsSystemPasswordChar = false;
-            this.skinTextBox6.Lines = new string[0];
-            this.skinTextBox6.Location = new System.Drawing.Point(102, 64);
-            this.skinTextBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox6.MaxLength = 8;
-            this.skinTextBox6.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox6.MouseBack = null;
-            this.skinTextBox6.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox6.Multiline = true;
-            this.skinTextBox6.Name = "skinTextBox6";
-            this.skinTextBox6.NormlBack = null;
-            this.skinTextBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox6.ReadOnly = false;
-            this.skinTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox6.Size = new System.Drawing.Size(141, 29);
+            this.rechargePageCard.BackColor = System.Drawing.Color.Transparent;
+            this.rechargePageCard.DownBack = null;
+            this.rechargePageCard.Icon = null;
+            this.rechargePageCard.IconIsButton = false;
+            this.rechargePageCard.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.rechargePageCard.IsPasswordChat = '\0';
+            this.rechargePageCard.IsSystemPasswordChar = false;
+            this.rechargePageCard.Lines = new string[0];
+            this.rechargePageCard.Location = new System.Drawing.Point(102, 64);
+            this.rechargePageCard.Margin = new System.Windows.Forms.Padding(0);
+            this.rechargePageCard.MaxLength = 80;
+            this.rechargePageCard.MinimumSize = new System.Drawing.Size(28, 28);
+            this.rechargePageCard.MouseBack = null;
+            this.rechargePageCard.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.rechargePageCard.Multiline = true;
+            this.rechargePageCard.Name = "rechargePageCard";
+            this.rechargePageCard.NormlBack = null;
+            this.rechargePageCard.Padding = new System.Windows.Forms.Padding(5);
+            this.rechargePageCard.ReadOnly = false;
+            this.rechargePageCard.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.rechargePageCard.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox6.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox6.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox6.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox6.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox6.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox6.SkinTxt.MaxLength = 8;
-            this.skinTextBox6.SkinTxt.Multiline = true;
-            this.skinTextBox6.SkinTxt.Name = "BaseText";
-            this.skinTextBox6.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox6.SkinTxt.TabIndex = 0;
-            this.skinTextBox6.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox6.SkinTxt.WaterText = "";
-            this.skinTextBox6.TabIndex = 14;
-            this.skinTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox6.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox6.WaterText = "";
-            this.skinTextBox6.WordWrap = true;
+            this.rechargePageCard.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rechargePageCard.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rechargePageCard.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.rechargePageCard.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.rechargePageCard.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.rechargePageCard.SkinTxt.MaxLength = 80;
+            this.rechargePageCard.SkinTxt.Multiline = true;
+            this.rechargePageCard.SkinTxt.Name = "BaseText";
+            this.rechargePageCard.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.rechargePageCard.SkinTxt.TabIndex = 0;
+            this.rechargePageCard.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.rechargePageCard.SkinTxt.WaterText = "";
+            this.rechargePageCard.TabIndex = 14;
+            this.rechargePageCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rechargePageCard.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.rechargePageCard.WaterText = "";
+            this.rechargePageCard.WordWrap = true;
             // 
             // label8
             // 
@@ -667,62 +687,73 @@
             this.skinButton2.TabIndex = 12;
             this.skinButton2.Text = "充值";
             this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
             // 
-            // skinTextBox7
+            // rechargePageUserName
             // 
-            this.skinTextBox7.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox7.DownBack = null;
-            this.skinTextBox7.Icon = null;
-            this.skinTextBox7.IconIsButton = false;
-            this.skinTextBox7.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox7.IsPasswordChat = '\0';
-            this.skinTextBox7.IsSystemPasswordChar = false;
-            this.skinTextBox7.Lines = new string[0];
-            this.skinTextBox7.Location = new System.Drawing.Point(102, 24);
-            this.skinTextBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox7.MaxLength = 8;
-            this.skinTextBox7.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox7.MouseBack = null;
-            this.skinTextBox7.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox7.Multiline = true;
-            this.skinTextBox7.Name = "skinTextBox7";
-            this.skinTextBox7.NormlBack = null;
-            this.skinTextBox7.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox7.ReadOnly = false;
-            this.skinTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.skinTextBox7.Size = new System.Drawing.Size(141, 29);
+            this.rechargePageUserName.BackColor = System.Drawing.Color.Transparent;
+            this.rechargePageUserName.DownBack = null;
+            this.rechargePageUserName.Icon = null;
+            this.rechargePageUserName.IconIsButton = false;
+            this.rechargePageUserName.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.rechargePageUserName.IsPasswordChat = '\0';
+            this.rechargePageUserName.IsSystemPasswordChar = false;
+            this.rechargePageUserName.Lines = new string[0];
+            this.rechargePageUserName.Location = new System.Drawing.Point(102, 24);
+            this.rechargePageUserName.Margin = new System.Windows.Forms.Padding(0);
+            this.rechargePageUserName.MaxLength = 20;
+            this.rechargePageUserName.MinimumSize = new System.Drawing.Size(28, 28);
+            this.rechargePageUserName.MouseBack = null;
+            this.rechargePageUserName.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.rechargePageUserName.Multiline = true;
+            this.rechargePageUserName.Name = "rechargePageUserName";
+            this.rechargePageUserName.NormlBack = null;
+            this.rechargePageUserName.Padding = new System.Windows.Forms.Padding(5);
+            this.rechargePageUserName.ReadOnly = false;
+            this.rechargePageUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.rechargePageUserName.Size = new System.Drawing.Size(141, 29);
             // 
             // 
             // 
-            this.skinTextBox7.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox7.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox7.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox7.SkinTxt.ForeColor = System.Drawing.Color.Gray;
-            this.skinTextBox7.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox7.SkinTxt.MaxLength = 8;
-            this.skinTextBox7.SkinTxt.Multiline = true;
-            this.skinTextBox7.SkinTxt.Name = "BaseText";
-            this.skinTextBox7.SkinTxt.Size = new System.Drawing.Size(131, 19);
-            this.skinTextBox7.SkinTxt.TabIndex = 0;
-            this.skinTextBox7.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox7.SkinTxt.WaterText = "";
-            this.skinTextBox7.TabIndex = 11;
-            this.skinTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.skinTextBox7.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox7.WaterText = "";
-            this.skinTextBox7.WordWrap = true;
+            this.rechargePageUserName.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rechargePageUserName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rechargePageUserName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.rechargePageUserName.SkinTxt.ForeColor = System.Drawing.Color.Gray;
+            this.rechargePageUserName.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.rechargePageUserName.SkinTxt.MaxLength = 20;
+            this.rechargePageUserName.SkinTxt.Multiline = true;
+            this.rechargePageUserName.SkinTxt.Name = "BaseText";
+            this.rechargePageUserName.SkinTxt.Size = new System.Drawing.Size(131, 19);
+            this.rechargePageUserName.SkinTxt.TabIndex = 0;
+            this.rechargePageUserName.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.rechargePageUserName.SkinTxt.WaterText = "";
+            this.rechargePageUserName.TabIndex = 11;
+            this.rechargePageUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rechargePageUserName.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.rechargePageUserName.WaterText = "";
+            this.rechargePageUserName.WordWrap = true;
             // 
-            // linkLabel1
+            // registerTip
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.LightSteelBlue;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.IndianRed;
-            this.linkLabel1.Location = new System.Drawing.Point(19, 272);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(221, 12);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "做任务领取充值卡？点我了解一下！！！";
+            this.registerTip.AutoSize = true;
+            this.registerTip.ForeColor = System.Drawing.Color.Gold;
+            this.registerTip.Location = new System.Drawing.Point(21, 150);
+            this.registerTip.Name = "registerTip";
+            this.registerTip.Size = new System.Drawing.Size(21, 13);
+            this.registerTip.TabIndex = 18;
+            this.registerTip.Text = "无";
+            this.registerTip.Visible = false;
+            // 
+            // rechargeTip
+            // 
+            this.rechargeTip.AutoSize = true;
+            this.rechargeTip.ForeColor = System.Drawing.Color.Gold;
+            this.rechargeTip.Location = new System.Drawing.Point(21, 150);
+            this.rechargeTip.Name = "rechargeTip";
+            this.rechargeTip.Size = new System.Drawing.Size(21, 13);
+            this.rechargeTip.TabIndex = 19;
+            this.rechargeTip.Text = "无";
+            this.rechargeTip.Visible = false;
             // 
             // MemberControl2
             // 
@@ -766,20 +797,22 @@
         private CCWin.SkinControl.SkinTextBox loginPageUserName;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
-        private CCWin.SkinControl.SkinTextBox skinTextBox4;
+        private CCWin.SkinControl.SkinTextBox registPageEmail;
         private System.Windows.Forms.Label label3;
-        private CCWin.SkinControl.SkinTextBox skinTextBox2;
+        private CCWin.SkinControl.SkinTextBox registPagePassword;
         private System.Windows.Forms.Label label4;
         private CCWin.SkinControl.SkinButton skinButton1;
-        private CCWin.SkinControl.SkinTextBox skinTextBox3;
+        private CCWin.SkinControl.SkinTextBox registPageUserName;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label6;
-        private CCWin.SkinControl.SkinTextBox skinTextBox5;
+        private CCWin.SkinControl.SkinTextBox rechargePageRec;
         private System.Windows.Forms.Label label7;
-        private CCWin.SkinControl.SkinTextBox skinTextBox6;
+        private CCWin.SkinControl.SkinTextBox rechargePageCard;
         private System.Windows.Forms.Label label8;
         private CCWin.SkinControl.SkinButton skinButton2;
-        private CCWin.SkinControl.SkinTextBox skinTextBox7;
+        private CCWin.SkinControl.SkinTextBox rechargePageUserName;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label registerTip;
+        private System.Windows.Forms.Label rechargeTip;
     }
 }

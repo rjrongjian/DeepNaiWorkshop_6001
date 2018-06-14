@@ -12,6 +12,7 @@ namespace DeepNaiWorkshop_6001.MyTool
 {
     class MyWinformUtil
     {
+        /*
         public static void ShowProcessing(string msg, Form owner, ParameterizedThreadStart work, object workArg = null)
         {
             FrmProcessing processingForm = new FrmProcessing(msg);
@@ -25,5 +26,6 @@ namespace DeepNaiWorkshop_6001.MyTool
                 throw processingForm.WorkException;
             }
         }
+        */
     }
 }

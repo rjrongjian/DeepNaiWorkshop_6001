@@ -102,7 +102,8 @@ namespace DeepNaiWorkshop_6001.MyTool
             RegistryKey software = lm.OpenSubKey("Software\\Dyxf\\" , true);
             if (software == null)
             {
-                software = lm.CreateSubKey("Software\\Dyxf\\", true);
+                //4.0不支持此方法
+                //software = lm.CreateSubKey("Software\\Dyxf\\", true);
                
             }
 

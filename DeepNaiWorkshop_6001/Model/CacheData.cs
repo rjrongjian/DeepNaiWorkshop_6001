@@ -11,5 +11,6 @@ namespace DeepNaiWorkshop_6001.Model
         public static String StatusCode;//Yiyun
         public static String UserName;//Yiyun
         public static String ExpireDate;//just
+        public static YiYunSystemConfig YiYunData;
     }
 }

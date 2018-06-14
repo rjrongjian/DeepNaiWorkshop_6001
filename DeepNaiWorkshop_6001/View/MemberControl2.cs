@@ -107,9 +107,95 @@ namespace DeepNaiWorkshop_6001.View
             }
         }
 
-        internal void setFatherForm(MainForm mainForm)
+        public void setFatherForm(MainForm mainForm)
         {
             fatherForm = mainForm;
+        }
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+            // UserRegin | 用户注册 url
+            var url = YiYunUtil.ApiUrl["UserRegin"]; //  这里改成自己的地址
+
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+
+            try
+            {
+                //  这里改成自己的参数名称
+                parameters.Add("UserName", registPageUserName.Text.Trim());
+                parameters.Add("UserPwd", registPagePassword.Text.Trim());
+                parameters.Add("Email", registPageEmail.Text.Trim());
+                parameters.Add("Mac", "");
+
+                var ret = WebPost.ApiPost(url, parameters);
+
+                if (ret == "1")
+                {
+                    //MessageBox.Show("注册成功!");
+                    registerTip.Text = "注册成功！！！";
+                }
+                else
+                {
+                    //MessageBox.Show("注册失败,错误代码: " + ret);
+                    registerTip.Text = ret;
+                }
+            }
+            catch (Exception e19)
+            {
+                MyFileLog.WriteErrTolog("注册出现异常,原因," + e19);
+                //MessageBox.Show("网络连接失败!");
+                registerTip.Text = "软件异常，请联系客服";
+            }
+            if (!registerTip.Visible)
+            {
+                registerTip.Show();
+            }
+        }
+
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+            // UserRecharge | 用户充值
+            var url = YiYunUtil.ApiUrl["UserRecharge"]; //  这里改成自己的地址
+
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+
+            try
+            {
+                //  这里改成自己的参数名称
+                parameters.Add("UserName", rechargePageUserName.Text.Trim());
+                parameters.Add("CardPwd", rechargePageCard.Text.Trim());
+                parameters.Add("Referral", rechargePageRec.Text);
+
+                var ret = WebPost.ApiPost(url, parameters);
+
+                if (int.Parse(ret) >= 1)
+                {
+                    //MessageBox.Show("充值成功!");
+                    rechargeTip.Text = "充值成功！";
+                }
+                else
+                {
+                    //MessageBox.Show("充值失败,错误代码: " + ret);
+                    rechargeTip.Text = ret;
+                }
+            }
+            catch (Exception e20)
+            {
+                //MyLogUtil.ErrToLog("异常原因," + e20);
+                MyFileLog.WriteErrTolog("充值出现异常,原因," + e20);
+                //MessageBox.Show("网络连接失败!");
+                rechargeTip.Text = "软件异常，请联系客服";
+            }
+            if (!rechargeTip.Visible)
+            {
+                rechargeTip.Show();
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //调用系统默认的浏览器   
+            System.Diagnostics.Process.Start(CacheData.YiYunData.TaskUrlForRechargeCard);
         }
     }
 }

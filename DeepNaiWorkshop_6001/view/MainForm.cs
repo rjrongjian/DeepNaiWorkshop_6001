@@ -24,8 +24,9 @@ namespace DeepNaiWorkshop_6001.view
         private MainFormController mainFormController;
         public MainForm()
         {
-            
             InitializeComponent();
+
+            this.memberControl.setFatherForm(this);
         }
 
         public void InitMedia()
@@ -200,10 +201,10 @@ namespace DeepNaiWorkshop_6001.view
         private void mediaPanel_Paint(object sender, PaintEventArgs e)
         {
             //使用红色虚线绘制边框  
-            Pen pen1 = new Pen(Color.Red, 1);
-            pen1.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            pen1.DashPattern = new float[] { 4f, 2f };
-            e.Graphics.DrawRectangle(pen1, 0, 0, this.mediaPanel.Width , this.mediaPanel.Height );
+            //Pen pen1 = new Pen(Color.Red, 1);
+            //pen1.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            //pen1.DashPattern = new float[] { 4f, 2f };
+            //e.Graphics.DrawRectangle(pen1, 0, 0, this.mediaPanel.Width , this.mediaPanel.Height );
         }
     }
 }
