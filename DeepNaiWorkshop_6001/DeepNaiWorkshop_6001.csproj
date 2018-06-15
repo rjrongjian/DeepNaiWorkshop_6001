@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F38D247B-DCF6-492C-9A42-C9C6C5A6E8B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DeepNaiWorkshop_6001</RootNamespace>
+    <RootNamespace>dyxf</RootNamespace>
     <AssemblyName>DeepNaiWorkshop_6001</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -98,9 +98,11 @@
   <ItemGroup>
     <Compile Include="Controller\MainFormController.cs" />
     <Compile Include="Model\CacheData.cs" />
+    <Compile Include="Model\ComboxInfo.cs" />
     <Compile Include="Model\HttpResponseJson.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberJson.cs" />
+    <Compile Include="Model\ResourceApiInfo.cs" />
     <Compile Include="Model\ResourceMoviesJson.cs" />
     <Compile Include="Model\ResourceMovie.cs" />
     <Compile Include="Model\ResourceModule.cs" />
@@ -162,6 +164,12 @@
     <Compile Include="View\ListViewEX.Designer.cs">
       <DependentUpon>ListViewEX.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ListViewEX2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListViewEX2.Designer.cs">
+      <DependentUpon>ListViewEX2.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +193,12 @@
     </Compile>
     <Compile Include="View\NotifyControl.Designer.cs">
       <DependentUpon>NotifyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PlayerControl.Designer.cs">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TabControlEX.cs">
       <SubType>UserControl</SubType>
@@ -215,6 +229,9 @@
     <EmbeddedResource Include="View\ListViewEX.resx">
       <DependentUpon>ListViewEX.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ListViewEX2.resx">
+      <DependentUpon>ListViewEX2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NotifyControl.resx">
       <DependentUpon>NotifyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PlayerControl.resx">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TabControlEX.resx">
       <DependentUpon>TabControlEX.cs</DependentUpon>
